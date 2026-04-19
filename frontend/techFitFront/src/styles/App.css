@@ -11,11 +11,18 @@ button{
 }
 
 .containerGeral{
-    width: 75%;
+    /* width: 75%; */
     margin: 0.5rem auto;
     text-align: center;
     padding: 2rem;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerContexts{
+    margin: 0 auto;
+    width: 75%;
     justify-content: center;
     align-items: center;
 }
