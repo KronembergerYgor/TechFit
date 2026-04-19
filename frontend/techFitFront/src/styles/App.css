@@ -1,4 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+
+
+}
+
 button{
-    padding: 0.5rem 2rem;
-    border-radius: 5px 18px;
+    padding: 0.6rem 2rem;
+    background-color: #db8300;
+}
+
+.containerGeral{
+    width: 75%;
+    margin: 0.5rem auto;
+    text-align: center;
+    padding: 2rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }

@@ -2,15 +2,13 @@ import React from 'react';
 
 interface ButtonProps {
   title: string;
-  backgroundColor: string;
   classNameText: string;
-  fontSize: string;
 }
 
 
-function Button({title, backgroundColor, classNameText, fontSize}: ButtonProps) {
+function Button({title, classNameText}: ButtonProps) {
   return (
-    <button className={ classNameText } style={{ backgroundColor: backgroundColor, fontSize: fontSize   }}>{title}</button>
+    <button className={ classNameText }>{title}</button>
   );
 }
 

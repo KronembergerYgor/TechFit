@@ -2,16 +2,17 @@
     display: flex;         
     padding: 2rem;
     margin: 0;
-    gap: 3rem;     
-    flex: 1;             /* Faz cada item crescer e ocupar o mesmo espaço */
-    display: flex;      /* Faz cada item crescer igualmente */       
-    justify-content: center 
+    gap: 8rem;     
+    flex: 1;             /* Faz cada item crescer e ocupar o mesmo espaço */  
+    flex-direction: row; /* padrão, já alinha horizontalmente */
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
 }
+
 
 .listItem{
     list-style: none;
 }
-
 
 .header-container {
     display: flex;         /* Ativa o modo horizontal */
@@ -20,4 +21,10 @@
     gap: 3rem;             /* Cria um espaçamento entre os itens */
     width: 100%;
     border-bottom: 1px solid #000;
+}
+
+.buttonRegister{
+    border-radius: 5px 18px;
+    color: #ffffff;
+    font-size: 1.1rem;
 }

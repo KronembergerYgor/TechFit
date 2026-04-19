@@ -19,7 +19,7 @@ function Header() {
       <ul className='nav-container'>
         
         <Menu name="REGISTRO" url="#"/>
-        <li className="listItem"> <Button title="Cadastre-se" backgroundColor="#db8300" fontSize='1.1rem'/></li>
+        <li className="listItem"> <Button classNameText="buttonRegister" title="Cadastre-se"/></li>
 
       </ul>
   </header>
