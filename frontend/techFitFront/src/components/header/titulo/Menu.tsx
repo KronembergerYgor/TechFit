@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../../styles/titulos/Menu.css';
 
 interface MenuProps {
   name: string;

@@ -5,7 +5,7 @@ import Button from '../Button';
 
 function FirstSession() {
   return <>
-    <div className="containerFirst" style={{ border: "1px solid #000" }}>
+    <div className="containerFirst containers" style={{ border: "1px solid #000" }}>
           
         <TitleSmall titleText='TECNOLOGIA E PERFORMANCE'/>
         <h1 className="TitleSubText" >TechFit: O Ecossistema que conecta você e sua melhor versão Fitness</h1>
