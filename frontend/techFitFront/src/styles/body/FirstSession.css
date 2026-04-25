@@ -1,7 +1,7 @@
 .TitleSubText{
-    font-size: 94px;
+    font-size: 85px;
     padding: 0;
-    margin: 0;
+    margin: 2rem 0;
 }
 
 .TitleFirst{
@@ -10,12 +10,92 @@
 }
 
 .buttonContainerFirst{
-    font-size: 1.5rem;
+    font-size: 20px;
     border-radius: 5px;
     width: 20%;
     color: #ffffff;
 }
 
-.containerButtons{
-    margin-bottom: 2rem;
-}
+
+
+/* responsive */
+
+/* Mobile first */
+@media (min-width: 375px) {
+    .TitleSubText{
+        font-size: 20px;
+    }
+
+    .TitleFirst{
+        font-size: 8px;
+    }
+
+    .buttonContainerFirst{
+        font-size: 2px;
+    }
+
+
+ }  /* sm */
+
+
+@media (min-width: 768px) { 
+
+    .TitleSubText{
+        font-size: 30px;
+    }
+
+    .TitleFirst{
+        font-size: 10px;
+    }
+
+    .buttonContainerFirst{
+        font-size: 6px;
+    }
+
+
+}  /* md */
+@media (min-width: 992px) {
+    .TitleSubText{
+        font-size: 53px;
+    }
+
+    .TitleFirst{
+        font-size: 12px;
+    }
+
+    .buttonContainerFirst{
+        font-size: 9px;
+    }
+
+
+ }  /* lg */
+@media (min-width: 1200px) {
+    .TitleSubText{
+        font-size: 60px;
+    }
+
+    .TitleFirst{
+        font-size: 15px;
+    }
+
+    .buttonContainerFirst{
+        font-size: 14px;
+    }
+
+
+ } /* xl */
+@media (min-width: 1400px) {
+    .TitleSubText{
+        font-size: 80px;
+    }
+
+    .TitleFirst{
+        font-size: 20px;
+    }
+
+    .buttonContainerFirst{
+        font-size: 19px;
+    }
+    
+
+ } /* xxl */

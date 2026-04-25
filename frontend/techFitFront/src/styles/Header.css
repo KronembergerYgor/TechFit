@@ -1,12 +1,14 @@
+/* layout padrão desktop */
 .nav-container {
-    display: flex;         
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
     padding: 2rem;
     margin: 0;
-    gap: 8rem;     
-    flex: 1;             /* Faz cada item crescer e ocupar o mesmo espaço */  
-    flex-direction: row; /* padrão, já alinha horizontalmente */
-    justify-content: center; /* horizontal */
-    align-items: center;     /* vertical */
+    flex: 1;    
+    flex-direction: row; 
+    justify-content: center;
 }
 
 
@@ -33,4 +35,49 @@
     color: #000000;
     font-size: 20px;
     text-decoration: none;
+}
+
+
+/* botão hambúrguer (escondido no desktop) */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+/* HEADER */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    border-bottom: 1px solid #000;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-container {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: white;
+        padding: 1rem;
+        display: none;
+        gap: 1.5rem;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .nav-container.active {
+        display: flex;
+    }
 }
