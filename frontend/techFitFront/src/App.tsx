@@ -4,7 +4,6 @@ import FirstSession from './components/body/FirstSession';
 import SecondSession from './components/body/SecondSession';
 import ThirdSession from './components/body/ThirdSession';
 import './styles/App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from './assets/LogoNavigate.png';
 
 
