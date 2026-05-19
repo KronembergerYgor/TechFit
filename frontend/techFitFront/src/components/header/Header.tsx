@@ -22,7 +22,7 @@ function Header() {
         <Menu name="ALUNOS" url="#" />
         <Menu name="PROFISSIONAIS" url="#" />
 
-        <img src={logo} alt="Logo" width="19%"/>
+        <img src={logo} alt="Logo" width="175vw"/>
 
         <Menu name="REGISTRO" url="#" />
         <li className="listItem">

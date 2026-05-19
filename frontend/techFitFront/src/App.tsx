@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 import Header from './components/header/Header';
 import FirstSession from './components/body/FirstSession';
 import SecondSession from './components/body/SecondSession';
@@ -30,7 +30,10 @@ function App() {
       <Header />
 
       <div className='containerGeral'style={{ border: "1px solid #000" }}>
-          <FirstSession />
+        
+          <div className='backgroundFirstSession'>
+            <FirstSession />
+          </div>
           <SecondSession />
           <ThirdSession />
       </div>

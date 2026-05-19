@@ -7,6 +7,8 @@
 .TitleFirst{
     font-weight: normal;
     font-size: 22px;
+    padding: 0;
+    margin: 0;
 }
 
 .buttonContainerFirst{
@@ -14,8 +16,31 @@
     border-radius: 5px;
     width: 20%;
     color: #ffffff;
+
+    /* 1. Ativa o modo de alinhamento Flexbox */
+    display: flex; 
+    
+    /* 2. Alinha o ícone e o texto verticalmente no centro da linha */
+    align-items: center; 
+    
+    /* 3. Centraliza todo o bloco horizontalmente dentro do botão */
+    justify-content: center; 
+    
+    /* 4. Cria um espaçamento perfeito entre o ícone e o texto (sem precisar de margin) */
+    gap: 8px;
 }
 
+/* .titleBtn{
+
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+
+} */
+
+.tecFitName{
+    color: #db8300;
+}
 
 
 /* responsive */
@@ -45,7 +70,7 @@
     }
 
     .TitleFirst{
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .buttonContainerFirst{
@@ -60,7 +85,7 @@
     }
 
     .TitleFirst{
-        font-size: 12px;
+        font-size: 15px;
     }
 
     .buttonContainerFirst{
@@ -75,7 +100,7 @@
     }
 
     .TitleFirst{
-        font-size: 15px;
+        font-size: 25px;
     }
 
     .buttonContainerFirst{
@@ -90,7 +115,7 @@
     }
 
     .TitleFirst{
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .buttonContainerFirst{

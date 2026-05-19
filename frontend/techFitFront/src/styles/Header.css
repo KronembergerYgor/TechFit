@@ -16,15 +16,6 @@
     list-style: none;
 }
 
-.header-container {
-    display: flex;         /* Ativa o modo horizontal */
-    padding: 0;
-    margin: 0;
-    gap: 3rem;             /* Cria um espaçamento entre os itens */
-    width: 100%;
-    border-bottom: 1px solid #000;
-}
-
 .buttonRegister{
     border-radius: 5px 18px;
     color: #ffffff;
@@ -33,8 +24,9 @@
 
 .menuLink{
     color: #000000;
-    font-size: 20px;
+    font-size: 17px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 
@@ -55,6 +47,7 @@
     align-items: center;
     padding: 0 2rem;
     border-bottom: 1px solid #000;
+
 }
 
 /* MOBILE */

@@ -1,14 +1,19 @@
-import React from 'react';
+import { type ReactNode } from 'react';
 
 interface ButtonProps {
   title: string;
   classNameText: string;
+  subTitleBtn?: string;
+  icon?: ReactNode;
 }
 
 
-function Button({title, classNameText}: ButtonProps) {
+function Button({title, classNameText, icon, subTitleBtn}: ButtonProps) {
   return (
-    <button className={ classNameText }>{title}</button>
+    <button className={ classNameText }>
+      {icon} 
+      {title} 
+    </button>
   );
 }
 
