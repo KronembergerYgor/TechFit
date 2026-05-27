@@ -6,5 +6,24 @@
     gap: 1rem;
     margin-top: 2rem;
 
+}
 
+/* O container que segura o texto */
+.wrapper-animado {
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
+  display: block;
+}
+
+/* Quando o texto estiver escondido (mostrando apenas os 45 caracteres) */
+.wrapper-animado.recolhido {
+  max-height: 70px;  /* Altura ideal para cobrir as duas linhas iniciais com folga */
+  opacity: 0.9;
+}
+
+/* Quando o usuário clicar e ele expandir */
+.wrapper-animado.expandido {
+  /* Colocamos um valor seguro que seja maior que qualquer texto seu, mas não infinito */
+  max-height: 300px; 
+  opacity: 1;
 }
