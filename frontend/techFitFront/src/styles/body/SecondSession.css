@@ -1,29 +1,26 @@
+/* 1. O container pai alinha os itens por cima, permitindo alturas independentes
+.containerCards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: flex-start; 
+} */
 
-.containerButtons{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    gap: 1rem;
-    margin-top: 2rem;
-
-}
-
-/* O container que segura o texto */
+/* 3. O container que segura o texto e a animação */
 .wrapper-animado {
   overflow: hidden;
   transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
-  display: block;
+  width: 100%;
 }
 
-/* Quando o texto estiver escondido (mostrando apenas os 45 caracteres) */
+/* Quando estiver recolhido */
 .wrapper-animado.recolhido {
-  max-height: 70px;  /* Altura ideal para cobrir as duas linhas iniciais com folga */
-  opacity: 0.9;
+  max-height: 110px; /* Limita o texto para caber no tamanho padrão do card */
+  opacity: 0.85;
 }
 
-/* Quando o usuário clicar e ele expandir */
+/* Quando estiver expandido (SÓ o selecionado vai ganhar essa classe e crescer) */
 .wrapper-animado.expandido {
-  /* Colocamos um valor seguro que seja maior que qualquer texto seu, mas não infinito */
-  max-height: 300px; 
+  max-height: 500px; /* Permite que o texto longo apareça sem limites */
   opacity: 1;
 }

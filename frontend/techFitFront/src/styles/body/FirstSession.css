@@ -12,31 +12,29 @@
 }
 
 .buttonContainerFirst{
-    font-size: 20px;
+    font-size: 25px;
     border-radius: 5px;
     width: 20%;
     color: #ffffff;
-
-    /* 1. Ativa o modo de alinhamento Flexbox */
+    padding: 1rem;
+    margin: 1rem;
     display: flex; 
-    
-    /* 2. Alinha o ícone e o texto verticalmente no centro da linha */
     align-items: center; 
-    
-    /* 3. Centraliza todo o bloco horizontalmente dentro do botão */
-    justify-content: center; 
-    
-    /* 4. Cria um espaçamento perfeito entre o ícone e o texto (sem precisar de margin) */
-    gap: 8px;
+    justify-content: center;  
+    gap: 3px; 
 }
 
-/* .titleBtn{
+.containerButtons{
+    display: flex; /* 💡 Ativa o modo flexível e joga os filhos na mesma linha */
+    gap: 15px;      /* Controla o espaçamento entre os dois elementos */
 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
+    /* Opcionais para alinhar: */
+    justify-content: center; /* Empurra um para cada ponta, ou 'center' para centralizar */
+    align-items: center;
 
-} */
+
+}
+
 
 .tecFitName{
     color: #db8300;

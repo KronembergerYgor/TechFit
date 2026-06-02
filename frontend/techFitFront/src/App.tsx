@@ -3,6 +3,7 @@ import Header from './components/header/Header';
 import FirstSession from './components/body/FirstSession';
 import SecondSession from './components/body/SecondSession';
 import ThirdSession from './components/body/ThirdSession';
+import FourthSession from './components/body/FourthSession';
 import './styles/App.css';
 import logo from './assets/LogoNavigate.png';
 
@@ -35,7 +36,9 @@ function App() {
             <FirstSession />
           </div>
           <SecondSession />
+          <FourthSession />
           <ThirdSession />
+
       </div>
 
     </>
