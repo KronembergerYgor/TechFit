@@ -55,12 +55,12 @@ function App() {
 
         {/* 📊 Segunda Seção (Onde estão as suas abas e cards): 
             Ela espera a primeira carregar para surgir suavemente de baixo para cima */}
-        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="200">
           <SecondSession />
         </div>
 
         {/* 🎯 Terceira Seção */}
-        <div data-aos="fade-up" data-aos-delay="200">
+        <div data-aos="fade-up" data-aos-delay="100">
           <ThirdSession />
         </div>
 
