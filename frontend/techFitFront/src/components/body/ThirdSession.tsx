@@ -38,8 +38,6 @@ function ThirdSession() {
 
               <hr />
 
-              <p>icones</p>
-
           </div>
         
         </div>

@@ -41,6 +41,7 @@ button{
     min-height: 300px; 
     box-sizing: border-box;
     justify-content: center; 
+    margin-bottom:5rem;
 }
 
 .containerCards{
@@ -77,30 +78,89 @@ h1{
 
 
 
-.titleSecondSession{
-    /* 1. Transforma o h2 em um container flex vertical */
-  display: inline-flex; /* ou 'display: flex' se quiser que o bloco ocupe a largura total */
-  flex-direction: column;
+/* Container externo */
+.tabs-container-session {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0 2rem 0;
+}
+
+.titleSecondSession {
+  display: flex;          
+  align-items: center; 
+  justify-content: center;
+  /* 💡 Ajuste a largura máxima para que os textos não fiquem colados ou longe demais */
+  width: 100%;
+  max-width: 500px; 
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.tab-item-menu{
+
+    font-size: 1.7rem !important;
+}
+
+
+.tab-item, .tab-item-menu{
+  /* 💡 RESETS CRUTIAIS: Limpa totalmente o estilo nativo de botão */
+  background: transparent !important; /* Remove o bloco de fundo laranja/cinza */
+  border: none !important;             /* Remove a borda preta em volta */
+  outline: none;
+  padding: 0 0 8px 0;                 /* Zera paddings laterais, mantém só o espaço para a linha de baixo */
   
-  /* 2. Alinha os itens (o texto e o before) à esquerda (ou 'center' se quiser centralizado) */
-  align-items: flex-start; 
-
-  /* 3. Controla a distância entre o texto e o elemento de baixo */
-  gap: 0.3rem;
-  margin-top:3rem;
-  font-size: 26px;
+  /* 💡 ESTILO VISUAL (Igual ao seu mockup original) */
+  font-family: inherit;     
+  font-size: 1.4rem;
+  font-weight: 600;
+  cursor: pointer;          
+  color: #666666; 
+  border-bottom: 3px solid transparent; 
+  transition: all 0.2s ease;
+  
+  /* Mantém o alinhamento centralizado que corrigimos */
+  flex: 1; 
 }
 
-.titleSecondSession::after{
-  content: '';
-  display: inline-block;
-  width: 4rem;
-  height: 5px;
-  margin-right: 10px;
-  background: linear-gradient(to right, #e18600, #5c3100);
-  margin-left: -1.8rem;
+/* Alinhamento de texto nas pontas */
+.tab-item:first-child { text-align: right; }
+.tab-item:last-child { text-align: left; }
+
+/* 💡 ESTADO ATIVO */
+.tab-item.active {
+  color: #000000 !important; 
+  border-bottom: 3px solid #db8300 !important; 
+  transition: all 0.3s ease-in;
+}
+
+.tab-item-menu.active{
+    color: #db8300 !important; 
+    font-size: 2rem !important;
+    font-weight: bold;
+}
+
+
+
+/* Garante que o ícone do meio não herde nenhuma linha */
+.tab-separator {
+  color: #db8300;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1.5rem; 
+  transform: translateY(-1.5px); 
+}
+
+.tab-separator.active{
+    border-bottom-color: #db8300; 
+    padding-bottom: 0.6rem;
 
 }
+
+
+
 
 
 

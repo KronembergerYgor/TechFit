@@ -4,6 +4,8 @@ import '../../styles/Header.css';
 import '../Button';
 import Button from '../Button';
 import logo from '../../assets/LogoCompleta.png';
+import { TiThMenu } from "react-icons/ti";
+
 
 function Header() {
     const [open, setOpen] = useState(false);
@@ -15,7 +17,7 @@ function Header() {
         className="hamburger"
         onClick={() => setOpen(!open)}
       >
-        ☰
+        <TiThMenu />
       </button>
 
       <ul className={`nav-container ${open ? 'active' : ''}`}>
