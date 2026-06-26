@@ -18,14 +18,9 @@ function randomNumber() {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
-
-
 function SecondSession() {
 
     const [abaAtiva, setAbaAtiva] = useState('inicio');
-
-
 
     const sizeIcons = 65;
     let infosButtons = [{}];
@@ -183,12 +178,8 @@ function SecondSession() {
 
           </div>
 
-         
         
-
         ) : (
-
-          
 
           infosButtons.map((info) => (
             <Card 

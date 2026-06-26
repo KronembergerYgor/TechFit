@@ -5,9 +5,11 @@ import Header from './components/header/Header';
 import FirstSession from './components/body/FirstSession';
 import SecondSession from './components/body/SecondSession';
 import ThirdSession from './components/body/ThirdSession';
+import FourthSession from './components/body/FourthSession';
 import Footer from './components/body/Footer';
 import './styles/App.css';
 import logo from './assets/LogoNavigate.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -49,7 +51,7 @@ function App() {
       <div className='containerGeral'>
         
         {/* 🏠 Primeira Seção: Surge com Fade normal bem rápido */}
-        <div className='backgroundFirstSession' data-aos="fade-up" data-aos-delay="200">
+        <div className='backgroundFirstSession' data-aos="fade-up" data-aos-delay="400">
           <FirstSession />
         </div>
 
@@ -60,8 +62,13 @@ function App() {
         </div>
 
         {/* 🎯 Terceira Seção */}
-        <div data-aos="fade-up" data-aos-delay="100">
+        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
           <ThirdSession />
+        </div>
+
+        {/* 🎯 Terceira Seção */}
+        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
+          <FourthSession />
         </div>
 
         {/* 📞 Rodapé */}

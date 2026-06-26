@@ -20,7 +20,7 @@ function randomNumber() {
 function ThirdSession() {
  
  return <>
-    <div className="containerFourth">
+    <div className="containerThird">
       
         <div style={{ padding: '2rem', display: 'flex', gap: '4rem', alignItems: 'flex-start', color:'#fff' , justifyContent: 'space-between'}}>
           

@@ -11,10 +11,17 @@ button{
 }
 
 .containerGeral{
-    text-align: center;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.cardBox{
+    border: 1px solid #b9b9b9; 
+    border-radius: 5px; 
+    padding: 3rem !important;
+    box-shadow: 1px 2px 5px #414141;
+    margin: 1rem;
 }
 
 
@@ -62,10 +69,9 @@ h1{
     margin: 0;
 }
 
-    .backgroundFirstSession{
+.backgroundFirstSession{
     background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.822)), 
     url('../assets/fundoAcademia.png');
-
     
     background-attachment:fixed;
     background-size: cover;        /* Redimensiona para cobrir todo o espaço */
@@ -73,7 +79,6 @@ h1{
     background-repeat: no-repeat;  /* Impede que a imagem fique se repetindo */
     margin: 0;
     color:#fff;
-
 }
 
 

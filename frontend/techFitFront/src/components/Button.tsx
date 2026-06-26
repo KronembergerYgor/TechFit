@@ -10,7 +10,7 @@ interface ButtonProps {
 
 function Button({title, classNameText, icon, subTitleBtn}: ButtonProps) {
   return (
-    <button className={ classNameText }>
+    <button style={{boxShadow: '2px 2px 4px #000'}} className={ classNameText }>
       {icon} 
       {title} 
     </button>
