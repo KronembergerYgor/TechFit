@@ -184,7 +184,7 @@ function SecondSession() {
           infosButtons.map((info) => (
             <Card 
               descriptrionStyle={descriptrionStyle} 
-              cardClass="card" 
+              cardClass="cardStyle" 
               customStyles={styles} 
               key={info.id} 
               icon={info.icone} 

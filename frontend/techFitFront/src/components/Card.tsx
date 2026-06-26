@@ -21,7 +21,7 @@ interface Props {
 
 
 
-function Card({ titleCard, textCard, icon, customStyles, cardClass="card", descriptrionStyle }: Props) {
+function Card({ titleCard, textCard, icon, customStyles, cardClass="cardStyle", descriptrionStyle }: Props) {
  
 
 
