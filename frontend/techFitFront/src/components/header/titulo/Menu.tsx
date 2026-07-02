@@ -6,14 +6,13 @@ interface MenuProps {
 }
 
 function Menu({ name, url }: MenuProps) {
-    
+
   return (
     <li className="listItem">
-        <a className="menuLink" href={url}>
-            {name}
-        </a>
+      <a className="menuLink" href={url}>
+        {name}
+      </a>
     </li>
-    
   );
 }
 

@@ -23,11 +23,55 @@
 
 }
 
-.menuLink{
+.buttonRegister:hover{
+    /* padding: 0.7rem 2.1rem; */
+    background-color: #b06a00;
+    transform: translateY(-4px);
+
+}
+
+
+/* 🎯 Classe Base que controla o tamanho exato do texto */
+.menuLink {
+    position: relative;
+    display: inline-block; /* 💡 Força o link a ter apenas a largura do texto */
+    text-decoration: none;
+    color: #ffffff;        /* Ajuste para a cor do seu menu */
+    padding-bottom: 4px;   /* Distância da linha */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: #000000;
     font-size: 17px;
     text-decoration: none;
     font-weight: bold;
+
+}
+
+/* 🪄 Criando a linha encolhida */
+.menuLink::after {
+    content: '';
+    position: absolute;
+    width: 100%;           /* O 100% agora vai medir exatamente o texto de cada <a> */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff5500; /* Cor laranja da sua marca */
+  
+    transform: scaleX(0);  /* Começa encolhida */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 🚀 Efeito Hover global para todos os links do menu */
+.menuLink:hover::after {
+
+    transform: scaleX(1);  /* Expande perfeitamente até a borda do texto */
+}
+
+.menuLink:hover{
+    /* font-size: 1.2rem; */
+    transform: translateY(-8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 

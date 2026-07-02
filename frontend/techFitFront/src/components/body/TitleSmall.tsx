@@ -6,7 +6,7 @@ interface props {
 
 
 function TitleSmall({titleText}: props) {
-  return <h3 className="TitleFirst">{titleText}</h3>
+  return <h3 style={{textShadow: '2px 1px 4px #919191'}} className="TitleFirst">{titleText}</h3>
 }
 
 export default TitleSmall;

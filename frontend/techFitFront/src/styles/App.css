@@ -1,3 +1,8 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -8,6 +13,7 @@ body{
 button{
     padding: 0.6rem 2rem;
     background-color: #db8300;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .containerGeral{
@@ -104,30 +110,45 @@ h1{
   font-weight: 700;
 }
 
-.tab-item-menu{
 
+
+
+
+
+
+
+
+
+
+
+.tab-item-menu{
     font-size: 1.7rem !important;
+     position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
 .tab-item, .tab-item-menu{
-  /* 💡 RESETS CRUTIAIS: Limpa totalmente o estilo nativo de botão */
-  background: transparent !important; /* Remove o bloco de fundo laranja/cinza */
-  border: none !important;             /* Remove a borda preta em volta */
-  outline: none;
-  padding: 0 0 8px 0;                 /* Zera paddings laterais, mantém só o espaço para a linha de baixo */
+    /* 💡 RESETS CRUTIAIS: Limpa totalmente o estilo nativo de botão */
+    background: transparent !important; /* Remove o bloco de fundo laranja/cinza */
+    border: none !important;             /* Remove a borda preta em volta */
+    outline: none;
+    padding: 0 0 8px 0;                 /* Zera paddings laterais, mantém só o espaço para a linha de baixo */
   
-  /* 💡 ESTILO VISUAL (Igual ao seu mockup original) */
-  font-family: inherit;     
-  font-size: 1.4rem;
-  font-weight: 600;
-  cursor: pointer;          
-  color: #666666; 
-  border-bottom: 3px solid transparent; 
-  transition: all 0.2s ease;
+    /* 💡 ESTILO VISUAL (Igual ao seu mockup original) */
+    font-family: inherit;     
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;          
+    color: #666666; 
+    border-bottom: 3px solid transparent; 
+    transition: all 0.2s ease;
   
-  /* Mantém o alinhamento centralizado que corrigimos */
-  flex: 1; 
+    /* Mantém o alinhamento centralizado que corrigimos */
+    flex: 1; 
+
+   
 }
 
 /* Alinhamento de texto nas pontas */
@@ -137,7 +158,7 @@ h1{
 /* 💡 ESTADO ATIVO */
 .tab-item.active {
   color: #000000 !important; 
-  border-bottom: 3px solid #db8300 !important; 
+  /* border-bottom: 3px solid #db8300 !important;  */
   transition: all 0.3s ease-in;
 }
 
@@ -146,6 +167,79 @@ h1{
     font-size: 2rem !important;
     font-weight: bold;
 }
+
+
+
+.tab-item::after {
+    content: '';
+    position: absolute;
+    width: 100%;           
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff5500; /* Cor laranja da sua marca */
+  
+    /* 📐 Ponto de partida: totalmente encolhida (tamanho 0) */
+    transform: scaleX(0);  
+    transform-origin: bottom left;
+    
+    /* 🏎️ Define a velocidade e suavidade da animação da linha */
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+
+
+
+/* 🪄 Criando a linha encolhida */
+.tab-item.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;           /* O 100% agora vai medir exatamente o texto de cada <a> */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ff5500; /* Cor laranja da sua marca */
+  
+    transform: scaleX(0);  /* Começa encolhida */
+    transform-origin: bottom left;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(1);  /* Expande perfeitamente até a borda do texto */
+}
+
+
+.tab-item.active{
+    /* font-size: 1.2rem; */
+    transform: translateY(-8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

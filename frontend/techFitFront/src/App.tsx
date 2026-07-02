@@ -9,10 +9,13 @@ import FourthSession from './components/body/FourthSession';
 import Footer from './components/body/Footer';
 import './styles/App.css';
 import logo from './assets/LogoNavigate.png';
+// 🔌 IMPORTS DO BOOTSTRAP (Mantenha os dois juntos)
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // 💡 ADICIONE ESTA LINHA AQUI!
 
-
-
+import { ScrollToTop } from './components/ScrollToTop';
+import Card  from './components/Card';
+import Modal from './components/Modal';
 
 function App() {
 
@@ -51,13 +54,13 @@ function App() {
       <div className='containerGeral'>
         
         {/* 🏠 Primeira Seção: Surge com Fade normal bem rápido */}
-        <div className='backgroundFirstSession' data-aos="fade-up" data-aos-delay="400">
+        <div className='backgroundFirstSession' data-aos="fade-up" data-aos-delay="200">
           <FirstSession />
         </div>
 
         {/* 📊 Segunda Seção (Onde estão as suas abas e cards): 
             Ela espera a primeira carregar para surgir suavemente de baixo para cima */}
-        <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="200">
+        <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
           <SecondSession />
         </div>
 
@@ -72,7 +75,16 @@ function App() {
         </div>
 
         {/* 📞 Rodapé */}
-        <Footer />
+          <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
+            <Footer />
+          </div>
+
+          <ScrollToTop />
+
+
+
+          <Modal idModal="modal1" titleModal="Você é Aluno ou Professor?" bodyModal={<Footer />}/>
+          
           
       </div>
     </>

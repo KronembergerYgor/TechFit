@@ -5,6 +5,7 @@ import '../Button';
 import Button from '../Button';
 import logo from '../../assets/LogoCompleta.png';
 import { TiThMenu } from "react-icons/ti";
+import Modal from '../Modal';
 
 
 function Header() {
@@ -26,11 +27,19 @@ function Header() {
 
         <img src={logo} alt="Logo" width="175vw"/>
 
-        <Menu name="REGISTRO" url="#" />
+        <Menu name="CONTATOS" url="#contatos" />
         <li className="listItem">
-          <Button classNameText="buttonRegister" title="Cadastre-se" />
+          <Button classNameText="buttonRegister" title="Cadastre-se" isModal={true} dataBsTarget="#modal1" />
         </li>
       </ul>
+
+
+
+    {/* <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> */}
+
+
 
     </header>
   );
