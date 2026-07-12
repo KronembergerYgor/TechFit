@@ -1,12 +1,6 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // 💡 Importante: Importe o CSS do AOS // 💡 Importante: Importe o CSS do AOS
-import Header from './components/header/Header';
-import FirstSession from './components/body/FirstSession';
-import SecondSession from './components/body/SecondSession';
-import ThirdSession from './components/body/ThirdSession';
-import FourthSession from './components/body/FourthSession';
-import Footer from './components/body/Footer';
 import './styles/App.css';
 import logo from './assets/LogoNavigate.png';
 // 🔌 IMPORTS DO BOOTSTRAP (Mantenha os dois juntos)
@@ -16,6 +10,13 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // 💡 ADICIONE ESTA LINHA 
 import { ScrollToTop } from './components/ScrollToTop';
 import Card  from './components/Card';
 import Modal from './components/Modal';
+import Header from './components/header/Header';
+import FirstSession from './components/body/FirstSession';
+import SecondSession from './components/body/SecondSession';
+import ThirdSession from './components/body/ThirdSession';
+import FourthSession from './components/body/FourthSession';
+import Footer from './components/body/Footer';
+import TitleModalRegister from './components/TitleModalRegister';
 
 function App() {
 
@@ -83,7 +84,8 @@ function App() {
 
 
 
-          <Modal idModal="modal1" titleModal="Você é Aluno ou Professor?" bodyModal={<Footer />}/>
+
+          <Modal idModal="modal1" titleModal={<TitleModalRegister />} bodyModal={<Footer />}/>
           
           
       </div>
