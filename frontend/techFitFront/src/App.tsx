@@ -8,7 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // 💡 ADICIONE ESTA LINHA AQUI!
 
 import { ScrollToTop } from './components/ScrollToTop';
-import Card  from './components/Card';
 import Modal from './components/Modal';
 import Header from './components/header/Header';
 import FirstSession from './components/body/FirstSession';
@@ -17,6 +16,7 @@ import ThirdSession from './components/body/ThirdSession';
 import FourthSession from './components/body/FourthSession';
 import Footer from './components/body/Footer';
 import TitleModalRegister from './components/TitleModalRegister';
+import BodyModalRegisters from './components/BodyModalRegisters';
 
 function App() {
 
@@ -81,11 +81,8 @@ function App() {
           </div>
 
           <ScrollToTop />
-
-
-
-
-          <Modal idModal="modal1" titleModal={<TitleModalRegister />} bodyModal={<Footer />}/>
+          
+          <Modal idModal="modal1" titleModal={<TitleModalRegister />} bodyModal={<BodyModalRegisters />}/>
           
           
       </div>

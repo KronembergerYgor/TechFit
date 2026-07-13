@@ -89,6 +89,99 @@ h1{
 
 
 
+
+/* Modal */
+
+/* Modal */
+
+.bodyModalRegister {
+  background-color: #f8f9fa;
+  width: 100% !important;
+  
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Cards centralizados, sem mascote pra empurrar pra direita */
+  /* padding: 24px; */
+}
+
+/* Container dos dois cards */
+.cards-container {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Cards */
+.card-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 20px;
+  border-radius: 24px;
+  width: 200px;
+  min-height: 260px;
+  color: #ffffff;
+  transition: transform 0.2s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-register:hover {
+  transform: translateY(-4px);
+  box-shadow: 3px 3px 5px #000000;
+}
+
+.card-black {
+  background-color: #1a1a1a;
+}
+
+.card-orange {
+  background-color: #ff6b1a;
+}
+
+.card-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 0 0 8px 0;
+}
+
+.card-desc {
+  font-size: 0.875rem;
+  opacity: 0.85;
+  margin: 0 0 20px 0;
+}
+
+.card-arrow-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-top: auto;
+}
+/*modal*/
+
+
+
+
+
+
+
+
 /* Container externo */
 .tabs-container-session {
   width: 100%;
