@@ -1,20 +1,47 @@
 .containerFourth{
-  width: 75%;
+  width: 100%;
   justify-content: start;
   align-items: start;
   margin: 0 auto;
-  padding: 2rem;
-
+  padding: 1rem;
 }
 
 .buttonContact{
   border-radius: 6px;
-  width: 35%;
+  width: 100%;
 }
 
 .lineTitle{
   border: none;
-  height: 0.4rem;              
+  height: 0.4rem;
   width: 100%;
   background: linear-gradient(to right, transparent,#000, #db8300, transparent);
 }
+
+/* responsive */
+/* Mobile first (base acima já é o menor, < 375px) */
+
+@media (min-width: 375px) {
+    .containerFourth{ padding: 1.25rem; }
+    .buttonContact{ width: 90%; }
+} /* sm */
+
+@media (min-width: 768px) {
+    .containerFourth{ width: 90%; padding: 1.5rem; }
+    .buttonContact{ width: 60%; }
+} /* md */
+
+@media (min-width: 992px) {
+    .containerFourth{ width: 80%; padding: 2rem; }
+    .buttonContact{ width: 45%; }
+} /* lg */
+
+@media (min-width: 1200px) {
+    .containerFourth{ width: 75%; }
+    .buttonContact{ width: 35%; }
+} /* xl */
+
+@media (min-width: 1400px) {
+    .containerFourth{ width: 75%; }
+    .buttonContact{ width: 35%; }
+} /* xxl */

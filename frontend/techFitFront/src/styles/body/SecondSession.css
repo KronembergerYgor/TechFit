@@ -1,26 +1,44 @@
-/* 1. O container pai alinha os itens por cima, permitindo alturas independentes
-.containerCards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  align-items: flex-start; 
-} */
-
-/* 3. O container que segura o texto e a animação */
 .wrapper-animado {
   overflow: hidden;
   transition: max-height 0.4s ease-in-out, opacity 0.3s ease;
   width: 100%;
 }
 
-/* Quando estiver recolhido */
 .wrapper-animado.recolhido {
-  max-height: 110px; /* Limita o texto para caber no tamanho padrão do card */
+  max-height: 90px;
   opacity: 0.85;
 }
 
-/* Quando estiver expandido (SÓ o selecionado vai ganhar essa classe e crescer) */
 .wrapper-animado.expandido {
-  max-height: 500px; /* Permite que o texto longo apareça sem limites */
+  max-height: 600px;
   opacity: 1;
 }
+
+/* responsive */
+/* Mobile first (base acima já é o menor, < 375px) */
+
+@media (min-width: 375px) {
+    .wrapper-animado.recolhido{ max-height: 100px; }
+    .wrapper-animado.expandido{ max-height: 550px; }
+    /* .imgFirstIlustrator{} */
+} /* sm */
+
+@media (min-width: 768px) {
+    .wrapper-animado.recolhido{ max-height: 110px; }
+    .wrapper-animado.expandido{ max-height: 500px; }
+} /* md */
+
+@media (min-width: 992px) {
+    .wrapper-animado.recolhido{ max-height: 110px; }
+    .wrapper-animado.expandido{ max-height: 500px; }
+} /* lg */
+
+@media (min-width: 1200px) {
+    .wrapper-animado.recolhido{ max-height: 110px; }
+    .wrapper-animado.expandido{ max-height: 500px; }
+} /* xl */
+
+@media (min-width: 1400px) {
+    .wrapper-animado.recolhido{ max-height: 110px; }
+    .wrapper-animado.expandido{ max-height: 500px; }
+} /* xxl */

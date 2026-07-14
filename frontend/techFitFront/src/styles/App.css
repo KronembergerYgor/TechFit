@@ -1,390 +1,301 @@
-
 html{
     scroll-behavior: smooth;
 }
-
 body{
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -1px;
 }
-
 button{
-    padding: 0.6rem 2rem;
+    padding: 0.5rem 1.2rem;
     background-color: #db8300;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .containerGeral{
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;   /* empilha as seções verticalmente, sempre nessa ordem */
+    align-items: stretch;
+    min-height: 100vh;        /* opcional: garante que o footer não "suba" em páginas curtas */
 }
-
 .cardBox{
-    border: 1px solid #b9b9b9; 
-    border-radius: 5px; 
-    padding: 3rem !important;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+    padding: 1.5rem !important;
     box-shadow: 1px 2px 5px #414141;
     margin: 1rem;
 }
-
-
 .containers{
     margin: 0 auto;
-    width: 75%;
+    width: 100%;
     justify-content: center;
     align-items: center;
-    /* padding: 2rem; */
-
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
-
 .cardStyle{
-    width: 30%;
+    width: 100%;
     border-radius: 18px;
     border: solid 4px #5f5f5f;
     padding: 1rem 1rem 0rem 1rem;
     box-shadow: 2px 2px 5px #000000;
-    background-color: #161616;;
+    background-color: #161616;
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 300px; 
+    min-height: 260px;
     box-sizing: border-box;
-    justify-content: center; 
-    margin-bottom:5rem;
-}
-
-.containerCards{
-    display: flex;         
-    padding: 0;
-    margin: 0;
-    gap: 3rem;             
-    padding: 1rem;
-
-    /* display: flex; */
     justify-content: center;
-    gap: 20px;
-    align-items: flex-start; 
+    margin-bottom: 2rem;
 }
-
+.containerCards{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    margin: 0;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
 h1{
     padding: 0;
     margin: 0;
 }
-
 .backgroundFirstSession{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.822)), 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.822)),
     url('../assets/fundoAcademia.png');
-    
-    background-attachment:fixed;
-    background-size: cover;        /* Redimensiona para cobrir todo o espaço */
-    background-position: center;   /* Centraliza a imagem */
-    background-repeat: no-repeat;  /* Impede que a imagem fique se repetindo */
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
-    color:#fff;
+    padding: 1.5rem 1rem;
+    color: #fff;
 }
 
-
-
-
 /* Modal */
-
-/* Modal */
-
 .bodyModalRegister {
   background-color: #f8f9fa;
   width: 100% !important;
-  
   border-radius: 24px;
   display: flex;
   align-items: center;
-  justify-content: center; /* Cards centralizados, sem mascote pra empurrar pra direita */
-  /* padding: 24px; */
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
 }
-
-/* Container dos dois cards */
 .cards-container {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
 }
-
-/* Cards */
 .card-register {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 32px 20px;
+  padding: 24px 16px;
   border-radius: 24px;
-  width: 200px;
-  min-height: 260px;
+  width: 100%;
+  max-width: 260px;
+  min-height: 220px;
   color: #ffffff;
   transition: transform 0.2s ease;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
 }
-
 .card-register:hover {
   transform: translateY(-4px);
   box-shadow: 3px 3px 5px #000000;
 }
-
 .card-black {
   background-color: #1a1a1a;
 }
-
 .card-orange {
-  background-color: #ff6b1a;
+  background-color: rgb(219, 131, 0);
 }
-
 .card-icon-wrapper {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
-
 .card-title {
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   margin: 0 0 8px 0;
 }
-
 .card-desc {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   opacity: 0.85;
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
 }
-
 .card-arrow-btn {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: auto;
 }
-/*modal*/
 
-
-
-
-
-
-
-
-/* Container externo */
+/* Tabs */
 .tabs-container-session {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 3rem 0 2rem 0;
+  margin: 2rem 0 1.5rem 0;
 }
-
 .titleSecondSession {
-  display: flex;          
-  align-items: center; 
+  display: flex;
+  align-items: center;
   justify-content: center;
-  /* 💡 Ajuste a largura máxima para que os textos não fiquem colados ou longe demais */
   width: 100%;
-  max-width: 500px; 
+  max-width: 100%;
   margin: 0;
-  padding: 0;
-  font-size: 1.4rem;
+  padding: 0 1rem;
+  font-size: 1rem;
   font-weight: 700;
+  box-sizing: border-box;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 .tab-item-menu{
-    font-size: 1.7rem !important;
-     position: relative;
+    font-size: 1.2rem !important;
+    position: relative;
     display: inline-block;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 .tab-item, .tab-item-menu{
-    /* 💡 RESETS CRUTIAIS: Limpa totalmente o estilo nativo de botão */
-    background: transparent !important; /* Remove o bloco de fundo laranja/cinza */
-    border: none !important;             /* Remove a borda preta em volta */
+    background: transparent !important;
+    border: none !important;
     outline: none;
-    padding: 0 0 8px 0;                 /* Zera paddings laterais, mantém só o espaço para a linha de baixo */
-  
-    /* 💡 ESTILO VISUAL (Igual ao seu mockup original) */
-    font-family: inherit;     
-    font-size: 1.4rem;
+    padding: 0 0 8px 0;
+
+    font-family: inherit;
+    font-size: 0.9rem;
     font-weight: 600;
-    cursor: pointer;          
-    color: #666666; 
-    border-bottom: 3px solid transparent; 
+    cursor: pointer;
+    color: #666666;
+    border-bottom: 3px solid transparent;
     transition: all 0.2s ease;
-  
-    /* Mantém o alinhamento centralizado que corrigimos */
-    flex: 1; 
 
-   
+    flex: 1;
 }
-
-/* Alinhamento de texto nas pontas */
 .tab-item:first-child { text-align: right; }
 .tab-item:last-child { text-align: left; }
-
-/* 💡 ESTADO ATIVO */
 .tab-item.active {
-  color: #000000 !important; 
-  /* border-bottom: 3px solid #db8300 !important;  */
+  color: #000000 !important;
   transition: all 0.3s ease-in;
 }
-
 .tab-item-menu.active{
-    color: #db8300 !important; 
-    font-size: 2rem !important;
+    color: #db8300 !important;
+    font-size: 1.3rem !important;
     font-weight: bold;
 }
-
-
-
 .tab-item::after {
     content: '';
     position: absolute;
-    width: 100%;           
+    width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #ff5500; /* Cor laranja da sua marca */
-  
-    /* 📐 Ponto de partida: totalmente encolhida (tamanho 0) */
-    transform: scaleX(0);  
+    background-color: #ff5500;
+
+    transform: scaleX(0);
     transform-origin: bottom left;
-    
-    /* 🏎️ Define a velocidade e suavidade da animação da linha */
     transition: transform 0.3s ease-in-out;
 }
-
-
-
-
-
-
-/* 🪄 Criando a linha encolhida */
 .tab-item.active::after {
     content: '';
     position: absolute;
-    width: 100%;           /* O 100% agora vai medir exatamente o texto de cada <a> */
+    width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #ff5500; /* Cor laranja da sua marca */
-  
-    transform: scaleX(0);  /* Começa encolhida */
+    background-color: #ff5500;
+
+    transform: scaleX(1);
     transform-origin: bottom left;
     transition: transform 0.3s ease-in-out;
-    transform: scaleX(1);  /* Expande perfeitamente até a borda do texto */
 }
-
-
 .tab-item.active{
-    /* font-size: 1.2rem; */
     transform: translateY(-8px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Garante que o ícone do meio não herde nenhuma linha */
 .tab-separator {
   color: #db8300;
   display: inline-flex;
   align-items: center;
-  padding: 0 1.5rem; 
-  transform: translateY(-1.5px); 
+  padding: 0 0.6rem;
+  transform: translateY(-1.5px);
 }
-
 .tab-separator.active{
-    border-bottom-color: #db8300; 
+    border-bottom-color: #db8300;
     padding-bottom: 0.6rem;
-
 }
 
+/* responsive */
+/* Mobile first (base acima já é o menor, < 375px) */
 
-
-
-
-
-/* Mobile first */
 @media (min-width: 375px) {
-
- }  /* sm */
-
+    button{ padding: 0.55rem 1.4rem; }
+    .cardBox{ padding: 1.75rem !important; }
+    .cardStyle{ min-height: 280px; }
+    .card-register{ max-width: 280px; }
+    .titleSecondSession{ font-size: 1.1rem; }
+    .tab-item-menu{ font-size: 1.3rem !important; }
+    .tab-item, .tab-item-menu{ font-size: 0.95rem; }
+} /* sm */
 
 @media (min-width: 768px) {
-        
+    button{ padding: 0.6rem 1.6rem; }
+    .containers{ width: 90%; padding: 0 1.5rem; }
+    .cardBox{ padding: 2rem !important; }
+    .cardStyle{ width: 45%; margin-bottom: 3rem; }
+    .containerCards{ gap: 2rem; }
+    .backgroundFirstSession{ padding: 2rem 1rem; }
+    .cards-container{ flex-wrap: nowrap; gap: 1.5rem; }
+    .card-register{ width: 200px; max-width: none; min-height: 240px; }
+    .titleSecondSession{ font-size: 1.25rem; max-width: 500px; }
+    .tab-item-menu{ font-size: 1.5rem !important; }
+    .tab-item, .tab-item-menu{ font-size: 1.15rem; }
+    .tab-item-menu.active{ font-size: 1.7rem !important; }
+    .tab-separator{ padding: 0 1rem; }
+} /* md */
 
-
-}  /* md */
 @media (min-width: 992px) {
+    .containers{ width: 80%; }
+    .cardBox{ padding: 2.5rem !important; }
+    .cardStyle{ width: 30%; min-height: 300px; margin-bottom: 5rem; }
+    .containerCards{ gap: 3rem; }
+    .card-register{ width: 200px; min-height: 260px; }
+    .card-icon-wrapper{ width: 64px; height: 64px; }
+    .card-title{ font-size: 1.25rem; }
+    .card-desc{ font-size: 0.875rem; }
+    .card-arrow-btn{ width: 40px; height: 40px; font-size: 1.1rem; }
+    .titleSecondSession{ font-size: 1.4rem; }
+    .tab-item-menu{ font-size: 1.7rem !important; }
+    .tab-item, .tab-item-menu{ font-size: 1.4rem; }
+    .tab-item-menu.active{ font-size: 2rem !important; }
+    .tab-separator{ padding: 0 1.5rem; }
+} /* lg */
 
-
- }  /* lg */
 @media (min-width: 1200px) {
+    .containers{ width: 75%; }
+    .cardBox{ padding: 3rem !important; }
+    .backgroundFirstSession{ padding: 3rem 1rem; }
+} /* xl */
 
-    .backgroundFirstSession{
-        padding: 3rem 1rem;
-    } 
-
-
-
- } /* xl */
 @media (min-width: 1400px) {
-
-    .backgroundFirstSession{
-        padding: 8rem 1rem;
-    }
-
-
- } /* xxl */
+    .backgroundFirstSession{ padding: 8rem 1rem; }
+} /* xxl */

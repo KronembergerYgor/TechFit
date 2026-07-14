@@ -1,101 +1,105 @@
-/* layout padrão desktop */
+/* ==========================================================================
+   LAYOUT PADRÃO DESKTOP
+   ========================================================================== */
+
+/* Header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem; /* Ajustado para melhor respiro */
+    background-color: transparent; /* Mude para #ffffff ou #1a1a1a se precisar de fundo fixo */
+}
+
+/* Container de Navegação */
 .nav-container {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem; /* Espaçamento elegante entre links */
     list-style: none;
     align-items: center;
-    padding: 2rem;
     margin: 0;
+    padding: 0;
     flex: 1;    
     flex-direction: row; 
     justify-content: center;
 }
 
-
-.listItem{
+.listItem {
     list-style: none;
 }
 
-.buttonRegister{
-    border-radius: 5px 18px;
-    color: #ffffff;
-    font-size: 1.1rem;
-
-}
-
-.buttonRegister:hover{
-    /* padding: 0.7rem 2.1rem; */
-    background-color: #b06a00;
-    transform: translateY(-4px);
-    box-shadow: 2px 2px 4px #000;
-
-}
-
-
-/* 🎯 Classe Base que controla o tamanho exato do texto */
+/* 🎯 Links do Menu */
 .menuLink {
     position: relative;
-    display: inline-block; /* 💡 Força o link a ter apenas a largura do texto */
+    display: inline-block;
     text-decoration: none;
-    color: #ffffff;        /* Ajuste para a cor do seu menu */
-    padding-bottom: 4px;   /* Distância da linha */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: #000000;
-    font-size: 17px;
-    text-decoration: none;
-    font-weight: bold;
-
+    color: #1a1a1a; /* Preto fosco combinando com a marca */
+    font-size: 16px;
+    font-weight: 700; /* Negrito conforme o design do modal */
+    padding-bottom: 6px;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* 🪄 Criando a linha encolhida */
+/* Linha de Hover do Menu */
 .menuLink::after {
     content: '';
     position: absolute;
-    width: 100%;           /* O 100% agora vai medir exatamente o texto de cada <a> */
+    width: 100%;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #ff5500; /* Cor laranja da sua marca */
-  
-    transform: scaleX(0);  /* Começa encolhida */
+    background-color: #f78146; /* Laranja TechFit */
+    transform: scaleX(0);
     transform-origin: bottom left;
     transition: transform 0.3s ease-in-out;
 }
 
-/* 🚀 Efeito Hover global para todos os links do menu */
 .menuLink:hover::after {
-
-    transform: scaleX(1);  /* Expande perfeitamente até a borda do texto */
+    transform: scaleX(1);
 }
 
-.menuLink:hover{
-    /* font-size: 1.2rem; */
-    transform: translateY(-8px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+.menuLink:hover {
+    color: #f78146; /* Texto também fica laranja no hover */
+    transform: translateY(-2px); /* Efeito de elevação leve e sutil */
 }
 
+/* 🧡 Botão de Registro (Estilo Padrão TechFit) */
+.buttonRegister {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(219, 131, 0); /* Laranja da marca */
+    color: #ffffff !important;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 30px; /* Cantos arredondados idênticos aos cards do modal */
+    border: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
 
-/* botão hambúrguer (escondido no desktop) */
+.buttonRegister:hover {
+    background-color: #e04600; /* Laranja ligeiramente mais escuro */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 84, 0, 0.3); /* Sombra suave laranja */
+}
+
+/* Botão Hambúrguer (Escondido no Desktop) */
 .hamburger {
     display: none;
     font-size: 2rem;
     background: none;
     border: none;
+    color: #1a1a1a;
     cursor: pointer;
 }
 
 
-/* HEADER */
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-
-}
-
-/* MOBILE */
+/* ==========================================================================
+   LAYOUT RESPONSIVO (MOBILE)
+   ========================================================================== */
 @media (max-width: 768px) {
 
     .hamburger {
@@ -104,18 +108,26 @@
 
     .nav-container {
         position: absolute;
-        top: 70px;
+        top: 80px; /* Ajustado de acordo com o padding do header */
         left: 0;
         width: 100%;
         flex-direction: column;
-        background: white;
-        padding: 1rem;
+        background: #ffffff;
+        padding: 2rem 1rem;
         display: none;
-        gap: 1.5rem;
-        border-bottom: 1px solid #ccc;
+        gap: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-bottom: 1px solid #eeeeee;
+        z-index: 100;
     }
 
     .nav-container.active {
         display: flex;
+    }
+
+    /* Ajuste para o botão de registro ficar responsivo no mobile */
+    .buttonRegister {
+        width: 80%;
+        text-align: center;
     }
 }

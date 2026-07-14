@@ -174,7 +174,7 @@ function SecondSession() {
               </ul>
             </div>
             
-            <img style={{opacity: '0.8', width: '40%', height: 'auto', borderRadius: '8px', objectFit: 'cover'}} src={imgInfos} alt="" />
+            <img className="imgFirstIlustrator" style={{opacity: '0.8', width: '40%', height: 'auto', borderRadius: '8px', objectFit: 'cover'}} src={imgInfos} alt="Imagem ilustrativa o site com dois personagens" />
 
           </div>
 

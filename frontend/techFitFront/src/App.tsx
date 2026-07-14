@@ -76,9 +76,9 @@ function App() {
         </div>
 
         {/* 📞 Rodapé */}
-          <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="100">
-            <Footer />
-          </div>
+        {/* <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="100"> */}
+          <Footer />
+        {/* </div> */}
 
           <ScrollToTop />
           
