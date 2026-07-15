@@ -9,6 +9,7 @@
 .buttonContact{
   border-radius: 6px;
   width: 100%;
+  color:#fff;
 }
 
 .lineTitle{
@@ -22,7 +23,7 @@
 /* Mobile first (base acima já é o menor, < 375px) */
 
 @media (min-width: 375px) {
-    .containerFourth{ padding: 1.25rem; }
+    .containerFourth{ padding: 2rem;}
     .buttonContact{ width: 90%; }
 } /* sm */
 
@@ -32,7 +33,7 @@
 } /* md */
 
 @media (min-width: 992px) {
-    .containerFourth{ width: 80%; padding: 2rem; }
+    .containerFourth{ width: 80%; padding: 3rem; }
     .buttonContact{ width: 45%; }
 } /* lg */
 

@@ -11,6 +11,12 @@ button{
     padding: 0.5rem 1.2rem;
     background-color: #db8300;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+button:hover {
+    background-color: #e04600; /* Laranja ligeiramente mais escuro */
+    transform: translateY(-3px);
 }
 .containerGeral{
     display: flex;
@@ -23,7 +29,6 @@ button{
     border-radius: 5px;
     padding: 1.5rem !important;
     box-shadow: 1px 2px 5px #414141;
-    margin: 1rem;
 }
 .containers{
     margin: 0 auto;
@@ -65,7 +70,7 @@ h1{
 .backgroundFirstSession{
     background-image: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.822)),
     url('../assets/fundoAcademia.png');
-
+    z-index: inherit;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -180,7 +185,6 @@ h1{
     border: none !important;
     outline: none;
     padding: 0 0 8px 0;
-
     font-family: inherit;
     font-size: 0.9rem;
     font-weight: 600;
@@ -191,6 +195,12 @@ h1{
 
     flex: 1;
 }
+.tab-item:hover{
+    box-shadow: inset;
+    border: none;
+
+}
+
 .tab-item:first-child { text-align: right; }
 .tab-item:last-child { text-align: left; }
 .tab-item.active {
@@ -231,6 +241,8 @@ h1{
 .tab-item.active{
     transform: translateY(-8px);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border:none;
+
 }
 .tab-separator {
   color: #db8300;
@@ -249,12 +261,13 @@ h1{
 
 @media (min-width: 375px) {
     button{ padding: 0.55rem 1.4rem; }
-    .cardBox{ padding: 1.75rem !important; }
+    .cardBox{ padding: 1.75rem !important; margin:0; }
     .cardStyle{ min-height: 280px; }
     .card-register{ max-width: 280px; }
     .titleSecondSession{ font-size: 1.1rem; }
     .tab-item-menu{ font-size: 1.3rem !important; }
     .tab-item, .tab-item-menu{ font-size: 0.95rem; }
+
 } /* sm */
 
 @media (min-width: 768px) {
@@ -275,7 +288,7 @@ h1{
 
 @media (min-width: 992px) {
     .containers{ width: 80%; }
-    .cardBox{ padding: 2.5rem !important; }
+    .cardBox{ padding: 2.5rem !important; margin: 1rem; }
     .cardStyle{ width: 30%; min-height: 300px; margin-bottom: 5rem; }
     .containerCards{ gap: 3rem; }
     .card-register{ width: 200px; min-height: 260px; }

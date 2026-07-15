@@ -47,21 +47,21 @@
 /* Mobile first (base acima já é o menor, < 375px) */
 
 @media (min-width: 375px) {
-    .TitleSubText{ font-size: 20px; }
-    .TitleFirst{ font-size: 8px; }
+    .TitleSubText{ font-size: 45px; }
+    .TitleFirst{ font-size: 20px; }
     .buttonContainerFirst{ font-size: 10px; width: 55%; }
 } /* sm */
 
 @media (min-width: 768px) {
-    .TitleSubText{ font-size: 30px; }
-    .TitleFirst{ font-size: 12px; }
+    .TitleSubText{ font-size: 60px; }
+    .TitleFirst{ font-size: 20px; }
     .buttonContainerFirst{ font-size: 14px; width: 45%; }
     .containerButtons{ flex-direction: row; }
 } /* md */
 
 @media (min-width: 992px) {
-    .TitleSubText{ font-size: 53px; }
-    .TitleFirst{ font-size: 15px; }
+    .TitleSubText{ font-size: 60px; }
+    .TitleFirst{ font-size: 20px; }
     .buttonContainerFirst{ font-size: 18px; width: 30%; }
 } /* lg */
 

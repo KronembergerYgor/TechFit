@@ -10,23 +10,23 @@ import '../../styles/body/ThirdSession.css';
 
 
 
-const min = 1;
-const max = 1000;
+// const min = 1;
+// const max = 1000;
 
-function randomNumber() {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+// function randomNumber() {
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
 
 function ThirdSession() {
  
  return <>
     <div className="containerThird">
       
-        <div style={{ padding: '2rem', display: 'flex', gap: '4rem', alignItems: 'flex-start', color:'#fff' , justifyContent: 'space-between'}}>
+        <div className='row containerIconsThirdSession'>
           
-          <img style={{opacity: '0.8', width: '50%', height: 'auto', borderRadius: '8px', objectFit: 'cover'}} src={ImgSobreNos} alt="imagem ilustrativa para área 'Sobre nós' " />
+          <img className='col imgSecondIlustrator' src={ImgSobreNos} alt="imagem ilustrativa para área 'Sobre nós' " />
 
-          <div style={{textAlign: "start", overflowWrap: 'break-word', wordBreak: 'break-word', margin: 'auto', fontSize: '19px' }}>
+          <div className='col' style={{textAlign: "start", overflowWrap: 'break-word', wordBreak: 'break-word', margin: 'auto', fontSize: '19px' }}>
               <h3 style={{color: "#db8300"}}>Sobre Nós</h3>
               <h2>Conectamos pessoas, tecnologia e <span style={{color: "#db8300"}}>resultados</span></h2>
 

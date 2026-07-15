@@ -160,9 +160,9 @@ function SecondSession() {
 
         {abaAtiva === 'inicio' ? (
           
-          <div style={{ paddingBottom: '3rem', display: 'flex', alignItems: 'flex-start', color:'#000000' , justifyContent: 'space-between', textAlign: 'start'}}>
+          <div className='row containerIconsSecondSession'>
             
-            <div style={{textAlign: "start", overflowWrap: 'break-word', wordBreak: 'break-word', margin: 'auto', fontSize: '1.2rem' }}>
+            <div className='col textItensSecondSession'>
               <h1>UMA PLATAFORMA QUE <span style={{color: "#db8300"}}>CONECTA </span></h1>
               <h3>A ferramenta completa para transformar a relação entre alinos e professores</h3>
               <p>Nossa plataforma foi criada para facilitar a jornada de quem busca evolução e quem ensina. Alunos encontram professores qualificados, acompanham treinos personalizados, registram dietas e monitoram sua evolução com gráficos de performance. Professores gerenciam sua agenda de forma independente, controlam pagamentos, acessam históricos de treinos por alunos e expandem sua base de clientes sendo encontrados por novos alunos. Tudo em um só lugar, com comunicação direta e organização simplificada</p>
@@ -174,7 +174,7 @@ function SecondSession() {
               </ul>
             </div>
             
-            <img className="imgFirstIlustrator" style={{opacity: '0.8', width: '40%', height: 'auto', borderRadius: '8px', objectFit: 'cover'}} src={imgInfos} alt="Imagem ilustrativa o site com dois personagens" />
+            <img className="col imgFirstIlustrator" src={imgInfos} alt="Imagem ilustrativa o site com dois personagens" />
 
           </div>
 

@@ -74,16 +74,10 @@
     font-weight: 700;
     text-decoration: none;
     padding: 10px 24px;
-    border-radius: 30px; /* Cantos arredondados idênticos aos cards do modal */
+    border-radius: 10px; /* Cantos arredondados idênticos aos cards do modal */
     border: none;
     transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
-}
-
-.buttonRegister:hover {
-    background-color: #e04600; /* Laranja ligeiramente mais escuro */
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 84, 0, 0.3); /* Sombra suave laranja */
 }
 
 /* Botão Hambúrguer (Escondido no Desktop) */
@@ -94,6 +88,13 @@
     border: none;
     color: #1a1a1a;
     cursor: pointer;
+}
+.hamburger:hover{
+    background: none;
+}
+
+.logoMenu{
+    display: block;
 }
 
 
@@ -108,7 +109,7 @@
 
     .nav-container {
         position: absolute;
-        top: 80px; /* Ajustado de acordo com o padding do header */
+        top: 13%; /* Ajustado de acordo com o padding do header */
         left: 0;
         width: 100%;
         flex-direction: column;
@@ -116,18 +117,36 @@
         padding: 2rem 1rem;
         display: none;
         gap: 2rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: 2px 3px 5px rgb(0, 0, 0);
         border-bottom: 1px solid #eeeeee;
         z-index: 100;
+
     }
 
     .nav-container.active {
         display: flex;
+        transform: scaleY(0);
+        transform-origin: top;
+        animation: nascer 0.4s ease-out forwards;
+    }
+    @keyframes nascer {
+        from {
+            transform: scaleY(0);
+        }
+        to {
+            transform: scaleY(1);
+        }
     }
 
     /* Ajuste para o botão de registro ficar responsivo no mobile */
     .buttonRegister {
-        width: 80%;
+        width: 100%;
         text-align: center;
+        font-size: 20px;
     }
+
+    .menuLink{
+        font-size: 20px;
+    }
+
 }

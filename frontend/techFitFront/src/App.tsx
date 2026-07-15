@@ -46,10 +46,7 @@ function App() {
 
   return (
     <>
-      {/* 🚀 O Header surge deslizando de cima para baixo */}
-      <div data-aos="fade-down" data-aos-duration="600">
-        <Header />
-      </div>
+      <Header />
 
       {/* 💡 Removemos a borda preta de teste e adicionamos o container geral */}
       <div className='containerGeral'>
