@@ -97,6 +97,14 @@
     display: block;
 }
 
+.menuLinks {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    flex: 1;
+    justify-content: center;
+}
+
 
 /* ==========================================================================
    LAYOUT RESPONSIVO (MOBILE)
@@ -109,7 +117,7 @@
 
     .nav-container {
         position: absolute;
-        top: 13%; /* Ajustado de acordo com o padding do header */
+        top: 15.5%; /* Ajustado de acordo com o padding do header */
         left: 0;
         width: 100%;
         flex-direction: column;
@@ -121,6 +129,12 @@
         border-bottom: 1px solid #eeeeee;
         z-index: 100;
 
+    }
+
+     .menuLinks {
+        flex-direction: column;
+        width: 100%;
+        gap: 2rem;
     }
 
     .nav-container.active {

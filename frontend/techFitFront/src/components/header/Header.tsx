@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Menu from './titulo/Menu';
 import '../../styles/Header.css';
 import '../Button';
 import Button from '../Button';
 import logo from '../../assets/LogoCompleta.png';
 import { TiThMenu } from "react-icons/ti";
-import Modal from '../Modal';
+import RegisterPage from '../../pages/LoginPage'
 
 
 function Header() {
@@ -19,19 +19,28 @@ function Header() {
         onClick={() => setOpen(!open)}>
         <TiThMenu />
       </button>
-        <img className='logoMenu' src={logo} alt="Logo" width="175vw"/>
-
-      <ul className={`nav-container ${open ? 'active' : ''}`}>
-
-        <Menu name="ALUNOS" url="#" />
-        <Menu name="PROFISSIONAIS" url="#" />
+        <img className='logoMenu' src={logo} alt="Logo" width="230vw"/>
 
 
-        <Menu name="CONTATOS" url="#contatos" />
-        <li className="listItem">
-          <Button classNameText="buttonRegister" title="Cadastre-se" isModal={true} dataBsTarget="#modal1" />
-        </li>
-      </ul>
+        <ul className={`nav-container ${open ? 'active' : ''}`}>
+
+           <div className="menuLinks">
+              <Menu name="ALUNOS" url="/login/aluno" />
+              <Menu name="PROFISSIONAIS" url="/login/professor" />
+              <a className="menuLink" href="#contatos">CONTATOS</a>
+
+           </div>
+      
+
+          <li className="listItem buttonRegisterItem">
+            <Button classNameText="buttonRegister" title="Cadastre-se" isModal={true} dataBsTarget="#modalCadastro" />
+          </li>
+        </ul>
+
+           
+        {/* <Button classNameText="buttonRegister" title="Cadastre-se" isModal={true} dataBsTarget="#modal1" /> */}
+          
+   
 
     </header>
   );
