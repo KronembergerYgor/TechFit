@@ -5,7 +5,6 @@ import '../Button';
 import Button from '../Button';
 import logo from '../../assets/LogoCompleta.png';
 import { TiThMenu } from "react-icons/ti";
-import RegisterPage from '../../pages/LoginPage'
 
 
 function Header() {

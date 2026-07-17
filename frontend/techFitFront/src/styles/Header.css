@@ -1,46 +1,43 @@
 /* ==========================================================================
    LAYOUT PADRÃO DESKTOP
    ========================================================================== */
-
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 /* Header */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem; /* Ajustado para melhor respiro */
-    background-color: transparent; /* Mude para #ffffff ou #1a1a1a se precisar de fundo fixo */
+    padding: 1.5rem 1rem;
+    background-color: transparent;
 }
-
 /* Container de Navegação */
 .nav-container {
     display: flex;
-    gap: 2.5rem; /* Espaçamento elegante entre links */
+    gap: 2.5rem;
     list-style: none;
     align-items: center;
     margin: 0;
     padding: 0;
-    flex: 1;    
-    flex-direction: row; 
+    flex: 1;
+    flex-direction: row;
     justify-content: center;
 }
-
 .listItem {
     list-style: none;
 }
-
-/* 🎯 Links do Menu */
+/* Links do Menu */
 .menuLink {
     position: relative;
     display: inline-block;
     text-decoration: none;
-    color: #1a1a1a; /* Preto fosco combinando com a marca */
-    font-size: 16px;
-    font-weight: 700; /* Negrito conforme o design do modal */
+    color: #1a1a1a;
+    font-size: 18px;
+    font-weight: 700;
     padding-bottom: 6px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
-
-/* Linha de Hover do Menu */
 .menuLink::after {
     content: '';
     position: absolute;
@@ -48,38 +45,34 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #f78146; /* Laranja TechFit */
+    background-color: #f78146;
     transform: scaleX(0);
     transform-origin: bottom left;
     transition: transform 0.3s ease-in-out;
 }
-
 .menuLink:hover::after {
     transform: scaleX(1);
 }
-
 .menuLink:hover {
-    color: #f78146; /* Texto também fica laranja no hover */
-    transform: translateY(-2px); /* Efeito de elevação leve e sutil */
+    color: #f78146;
+    transform: translateY(-2px);
 }
-
-/* 🧡 Botão de Registro (Estilo Padrão TechFit) */
+/* Botão de Registro */
 .buttonRegister {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(219, 131, 0); /* Laranja da marca */
+    background-color: rgb(219, 131, 0);
     color: #ffffff !important;
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
     padding: 10px 24px;
-    border-radius: 10px; /* Cantos arredondados idênticos aos cards do modal */
+    border-radius: 10px;
     border: none;
     transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
 }
-
 /* Botão Hambúrguer (Escondido no Desktop) */
 .hamburger {
     display: none;
@@ -92,11 +85,11 @@
 .hamburger:hover{
     background: none;
 }
-
 .logoMenu{
     display: block;
+    float: left;
+    margin-right: 4rem;
 }
-
 .menuLinks {
     display: flex;
     align-items: center;
@@ -105,19 +98,113 @@
     justify-content: center;
 }
 
+/*============ Login Menu ============= */
+.header-container-login{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    min-width: 0;
+    position: relative;
+}
+
+.nav-container-login{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3rem;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+.titleFormLogin{
+    text-align: center;
+}
+.titleFormLogin h1{
+    text-shadow: 1px 1px 2px #000;
+}
+.inputsDiv{
+    width: 75%;
+    margin: 1.5rem auto;
+}
+.inputsDiv a{
+    float: right;
+    color: rgb(219, 131, 0);
+    margin-bottom: 1rem;
+}
+.fieldButtonEnter{
+    width: 75%;
+    margin: 1.5rem auto;
+}
+.containerDivisor{
+    width: 75%;
+    margin: 1.5rem auto;
+}
+.container-login-geral{
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+.contentFormLogin{
+    width: 35%;
+    padding: 1.5rem;
+    border: 1px solid #00000046;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    box-shadow: 17px 7px 11px #000;
+}
+.loginMenuIlustrator{
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 5px 7px 11px #000;
+    width: 35%;
+    height: auto;
+    display: block;
+}
+.logoMenuLogin{
+    width: 9.5rem;
+    max-width: 100%;
+    height: auto;
+    flex-shrink: 0;
+}
+.hamburgerLogin{
+    display: none;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    margin: 1rem;
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+}
+.hamburgerLogin:hover{
+    background-color: #f2f2f2;
+}
+/*============ Login Menu ============= */
 
 /* ==========================================================================
    LAYOUT RESPONSIVO (MOBILE)
    ========================================================================== */
 @media (max-width: 768px) {
-
+    .nav-container-login{
+        gap: 0.5rem;
+    }
+    .menuLink{
+        font-size: 14px;
+    }
     .hamburger {
         display: block;
     }
-
     .nav-container {
         position: absolute;
-        top: 15.5%; /* Ajustado de acordo com o padding do header */
+        top: 13.5%;
         left: 0;
         width: 100%;
         flex-direction: column;
@@ -128,15 +215,12 @@
         box-shadow: 2px 3px 5px rgb(0, 0, 0);
         border-bottom: 1px solid #eeeeee;
         z-index: 100;
-
     }
-
-     .menuLinks {
+    .menuLinks {
         flex-direction: column;
         width: 100%;
         gap: 2rem;
     }
-
     .nav-container.active {
         display: flex;
         transform: scaleY(0);
@@ -144,23 +228,109 @@
         animation: nascer 0.4s ease-out forwards;
     }
     @keyframes nascer {
-        from {
-            transform: scaleY(0);
-        }
-        to {
-            transform: scaleY(1);
-        }
+        from { transform: scaleY(0); }
+        to { transform: scaleY(1); }
     }
-
-    /* Ajuste para o botão de registro ficar responsivo no mobile */
     .buttonRegister {
         width: 100%;
         text-align: center;
         font-size: 20px;
     }
-
     .menuLink{
         font-size: 20px;
     }
+    .logoMenu{
+        margin-right: 2rem;
+        max-width: 150px;
+    }
+    .titleFormLogin h1{
+        font-size: 1.6rem;
+    }
+    .inputsDiv,
+    .fieldButtonEnter,
+    .containerDivisor{
+        width: 80%;
+        margin: 1.25rem auto;
+    }
+    .inputsDiv a{
+        font-size: 1rem;
+    }
+    .container-login-geral{
+        padding: 1.5rem;
+        margin-top: 3rem;
+    }
+    .contentFormLogin{
+        width: 60%;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+@media (max-width: 1600px) {
+    .loginMenuIlustrator{
+        display: none;
+    }
+    .contentFormLogin{
+        width: 60%;
+        border-radius: 1rem;
+    }
+}
+@media (max-width: 1000px) {
+    .hamburgerLogin{
+        display: block;
+    }
+    .nav-container-login.active {
+        display: flex;
+        transform: scaleY(0);
+        transform-origin: top;
+        animation: nascer 0.4s ease-out forwards;
+    }
+    @keyframes nascer {
+        from { transform: scaleY(0); }
+        to { transform: scaleY(1); }
+    }
+    .nav-container-login {
+        position: absolute;
+        top: 15.5%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: #ffffff;
+        padding: 2rem 1rem;
+        display: none;
+        gap: 2rem;
+        box-shadow: 2px 3px 5px rgb(0, 0, 0);
+        border-bottom: 1px solid #eeeeee;
+        z-index: 100;
+    }
 
+    /* Esconde só o <a> da logo (filho direto do header) neste breakpoint,
+       sem afetar os <a> dos links do menu (que ficam dentro do <ul>) */
+    .header-container-login > a{
+        display: none;
+    }
+
+    .container-login-geral {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 1rem;
+    }
+    .contentFormLogin{
+        width: 90%;
+        box-shadow: 4px 3px 5px #000;
+    }
+    .containerDivisor,
+    .fieldButtonEnter,
+    .inputsDiv{
+        width: 100%;
+    }
+
+    .nav-container-login li a{
+        font-size: 18px;
+        border-bottom: 1px solid #000;
+    }
+
+    
 }
