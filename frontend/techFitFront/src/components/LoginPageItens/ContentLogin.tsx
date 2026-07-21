@@ -3,27 +3,27 @@ import { useParams } from 'react-router-dom'
 
 import imgIlustratorLogin from '../../assets/IlustraçãoTelaLogin.png';
 import LogoCompleta from '../../assets/LogoCompleta.png';
-import HeaderLogin from '../header/HeaderLogin';
+import HeaderForms from '../header/HeaderForms';
 
-import TitlePageLogin from './TitlePageLogin';
+import TitlePageForm from '../TitlePageForm';
 import FormLogin from './FormLogin';
-import DivisorFormLogin from './DivisorFormLogin';
+import DivisorForm from '../DivisorForm';
 import RegisterLink from './RegisterLink';
 
 
 
 function ContentLogin() {
-  const { typeLogin } = useParams()
+  const { typeParam } = useParams()
 
   return <>
     <div className="container-login-geral">
 
       <div className="contentFormLogin" >
 
-          <HeaderLogin imgLogo={LogoCompleta} />
-          <TitlePageLogin typeLogin={typeLogin} />
+          <HeaderForms classNameTextHeader='header-container header-container-login' imgLogo={LogoCompleta} classNameTextImg="logoMenuLogin" urlProfessores="/login/professor" urlAlunos="/login/aluno" />
+          <TitlePageForm titleForm="LOGIN" typeParam={typeParam} subtitleForm="Realize login a sua conta para continuar"/>
           <FormLogin />
-          <DivisorFormLogin />
+          <DivisorForm classNameText="containerDivisor" />
           <RegisterLink />
 
       

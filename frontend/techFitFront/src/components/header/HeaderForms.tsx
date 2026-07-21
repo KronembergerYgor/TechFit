@@ -5,9 +5,18 @@ import { TiThMenu } from "react-icons/ti";
 
 interface Props {
   imgLogo: string;
+  widthImg?: number;
+  classNameTextImg?: string;
+  classNameTextHeader?: string;
+  urlAlunos: string;
+  urlProfessores: string;
+
+
+  
+
 }
 
-function HeaderLogin({imgLogo}: Props) {
+function HeaderForms({imgLogo, widthImg, classNameTextImg, urlProfessores, urlAlunos, classNameTextHeader}: Props) {
     const [open, setOpen] = useState(false);
   return (<>
     <button
@@ -15,17 +24,15 @@ function HeaderLogin({imgLogo}: Props) {
       onClick={() => setOpen(!open)}>
       <TiThMenu />
     </button>
-    <header className="header-container header-container-login">
-
-      <a href="/"><img className='logoMenuLogin' src={imgLogo} alt="Logo"/></a>
-
+    <header className={classNameTextHeader}>
+      <a href="/"><img className={classNameTextImg} src={imgLogo} alt="Logo" width={widthImg}/></a>
       <ul
         className={`nav-container-login ${open ? 'active' : ''}`}
         onClick={() => setOpen(false)}
       >
         <Menu name="HOME" url="/"/>
-        <Menu name="ALUNOS" url="/login/aluno"/>
-        <Menu name="PROFESSORES" url="/login/professor"/>
+        <Menu name="ALUNOS" url={urlAlunos}/>
+        <Menu name="PROFESSORES" url={urlProfessores}/>
       </ul>
     </header>
   </>
@@ -33,4 +40,4 @@ function HeaderLogin({imgLogo}: Props) {
   );
 }
 
-export default HeaderLogin;
+export default HeaderForms;

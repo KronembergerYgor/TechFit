@@ -7,6 +7,7 @@ import logo from './assets/LogoNavigate.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 import Home from './pages/Home';
 
 
@@ -36,7 +37,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login/:typeLogin" element={<LoginPage />} />
+        <Route path="/login/:typeParam" element={<LoginPage />} />
+        <Route path="/Register/:typeParam" element={<RegisterPage />} />
       </Routes>
     </>
   )

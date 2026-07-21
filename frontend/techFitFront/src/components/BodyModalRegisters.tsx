@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react';
 import { FaUserGraduate, FaChalkboardTeacher, FaArrowRight } from 'react-icons/fa';
+import CardModal from './CardModal'
 
 function BodyModalRegisters(): ReactNode {
   return (
@@ -12,30 +13,13 @@ function BodyModalRegisters(): ReactNode {
         <div className="cards-container">
 
           {/* Card Aluno */}
-          <a href="#" className="card-register card-black text-decoration-none">
-            <div className="card-icon-wrapper">
-              <FaUserGraduate size={30} />
-            </div>
-            <h3 className="card-title">Sou Aluno</h3>
-            <p className="card-desc">Quero aprender e alcançar meus objetivos</p>
-            <div className="card-arrow-btn">
-              <FaArrowRight size={16} />
-            </div>
-          </a>
-
+          <CardModal cardTypeStyle="card-black" icon={<FaUserGraduate size={30} />} hrefUrl="/Register/aluno" titleCard="Sou Aluno" description="Quero aprender e alcançar meus objetivos"/>  
+          
           {/* Card Professor */}
-          <a href="#" className="card-register card-orange text-decoration-none">
-            <div className="card-icon-wrapper">
-              <FaChalkboardTeacher size={30} />
-            </div>
-            <h3 className="card-title">Sou Professor</h3>
-            <p className="card-desc">Quero ensinar e transformar vidas</p>
-            <div className="card-arrow-btn">
-              <FaArrowRight size={16} />
-            </div>
-          </a>
-
+          <CardModal cardTypeStyle="card-orange" icon={<FaChalkboardTeacher size={30} />} hrefUrl="/Register/professor" titleCard="Sou Professor" description="Quero ensinar e transformar vidas"/>  
+        
         </div>
+         
 
       </div>
     
