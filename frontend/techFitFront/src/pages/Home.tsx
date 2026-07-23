@@ -10,9 +10,44 @@ import Modal from '../components/Modal';
 import { ScrollToTop } from '../components/ScrollToTop';
 import Header from '../components/header/Header';
 
+// import type { Role } from '../types/Role'; // ✅ import só de tipo
+
+// import { useEffect, useState } from 'react';
+// import { apiGet } from '../services/api';
+
 function Home() {
+  // const [roles, setRoles] = useState<Role[]>([]);
+  //   const [loading, setLoading] = useState(true);
+  //   const [error, setError] = useState<string | null>(null);
+
+  //   useEffect(() => {
+  //     apiGet<Role[]>('/roles')
+  //       .then(setRoles)
+  //       .catch((err) => setError(err.message))
+  //       .finally(() => setLoading(false));
+  //   }, []);
+
+  //   if (loading) return <p>Carregando...</p>;
+  //   if (error) return <p>Erro: {error}</p>;
+
+
+
+
+
   return (
     <>
+      {/* <ul>
+      {roles.map((role) => (
+        <li key={role.id}>{role.name}</li>
+      ))}
+    </ul> */}
+
+
+
+
+
+
+
       <Header />
 
       <div className='containerGeral'>
