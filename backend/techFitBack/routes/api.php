@@ -11,3 +11,6 @@ Route::get('/user', function (Request $request) {
 
 // Rotas de teste
 Route::get('/roles', [RolesController::class, 'index']);
+
+//Api Cadastro
+Route::post('/register', [UserController::class, 'store']);

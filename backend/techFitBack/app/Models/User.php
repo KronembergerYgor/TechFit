@@ -23,7 +23,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role', // 👈 sugestão: pra diferenciar aluno/professor
+        'role_id',
+        'status_active',
+        'cell_phone',
     ];
 
     /**
