@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import { FaUserGraduate, FaChalkboardTeacher, FaArrowRight } from 'react-icons/fa';
+import { FaUserGraduate, FaChalkboardTeacher } from 'react-icons/fa';
 import CardModal from './CardModal'
 
 function BodyModalRegisters(): ReactNode {
@@ -13,10 +13,10 @@ function BodyModalRegisters(): ReactNode {
         <div className="cards-container">
 
           {/* Card Aluno */}
-          <CardModal cardTypeStyle="card-black" icon={<FaUserGraduate size={30} />} hrefUrl="/Register/aluno" titleCard="Sou Aluno" description="Quero aprender e alcançar meus objetivos"/>  
+          <CardModal cardTypeStyle="card-black" icon={<FaUserGraduate size={30} />} hrefUrl="/Register/1" titleCard="Sou Aluno" description="Quero aprender e alcançar meus objetivos"/>  
           
           {/* Card Professor */}
-          <CardModal cardTypeStyle="card-orange" icon={<FaChalkboardTeacher size={30} />} hrefUrl="/Register/professor" titleCard="Sou Professor" description="Quero ensinar e transformar vidas"/>  
+          <CardModal cardTypeStyle="card-orange" icon={<FaChalkboardTeacher size={30} />} hrefUrl="/Register/2" titleCard="Sou Professor" description="Quero ensinar e transformar vidas"/>  
         
         </div>
          

@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom'
 interface MenuProps {
   name: string;
   url: string;
+  key?: number;
 }
 
-function Menu({ name, url }: MenuProps) {
+function Menu({ name, url, key }: MenuProps) {
 
   return (
- <li className="listItem">
+ <li key={key} className="listItem">
     <Link className="menuLink" to={url}>
       {name}
     </Link>

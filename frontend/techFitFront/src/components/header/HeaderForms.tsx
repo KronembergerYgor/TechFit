@@ -1,23 +1,37 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Menu from './titulo/Menu';
 import '../../styles/Header.css';
 import { TiThMenu } from "react-icons/ti";
+
+import type { Role } from '../../types/Role'; // ✅ import só de tipo
+import { apiGet } from '../../services/api';
 
 interface Props {
   imgLogo: string;
   widthImg?: number;
   classNameTextImg?: string;
   classNameTextHeader?: string;
-  urlAlunos: string;
-  urlProfessores: string;
-
-
-  
+  typePageMenu?: string;
 
 }
 
-function HeaderForms({imgLogo, widthImg, classNameTextImg, urlProfessores, urlAlunos, classNameTextHeader}: Props) {
+function HeaderForms({imgLogo, widthImg, classNameTextImg, classNameTextHeader, typePageMenu}: Props) {
     const [open, setOpen] = useState(false);
+    
+    const [roles, setRoles] = useState<Role[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+      apiGet<Role[]>('/roles')
+        .then(setRoles)
+        .catch((err) => setError(err.message))
+        .finally(() => setLoading(false));
+    }, []);
+
+    if (loading) return <p>Carregando...</p>;
+    if (error) return <p>Erro: {error}</p>;
+
   return (<>
     <button
       className="hamburgerLogin"
@@ -31,8 +45,10 @@ function HeaderForms({imgLogo, widthImg, classNameTextImg, urlProfessores, urlAl
         onClick={() => setOpen(false)}
       >
         <Menu name="HOME" url="/"/>
-        <Menu name="ALUNOS" url={urlAlunos}/>
-        <Menu name="PROFESSORES" url={urlProfessores}/>
+          {roles.map((role) => (
+              <Menu key={role.id} name={role.name.toUpperCase()} url={"/"  + typePageMenu + "/" + role.id} />
+          ))}
+
       </ul>
     </header>
   </>

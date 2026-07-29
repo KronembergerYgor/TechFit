@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Menu from './titulo/Menu';
 import '../../styles/Header.css';
 import '../Button';
@@ -6,10 +6,30 @@ import Button from '../Button';
 import logo from '../../assets/LogoCompleta.png';
 import { TiThMenu } from "react-icons/ti";
 
+import type { Role } from '../../types/Role'; // ✅ import só de tipo
+import { apiGet } from '../../services/api';
 
 function Header() {
     const [open, setOpen] = useState(false);
+
+    const [roles, setRoles] = useState<Role[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+      apiGet<Role[]>('/roles')
+        .then(setRoles)
+        .catch((err) => setError(err.message))
+        .finally(() => setLoading(false));
+    }, []);
+
+    if (loading) return <p>Carregando...</p>;
+    if (error) return <p>Erro: {error}</p>;
+
+
+
   return (
+
   <header className="header-container">
 
       {/* botão hambúrguer */}
@@ -24,8 +44,12 @@ function Header() {
         <ul className={`nav-container ${open ? 'active' : ''}`}>
 
            <div className="menuLinks">
-              <Menu name="ALUNOS" url="/login/aluno" />
-              <Menu name="PROFISSIONAIS" url="/login/professor" />
+
+            {roles.map((role) => (
+              <Menu name={role.name.toUpperCase()} url={"/login/" + role.id} />
+
+            ))}
+
               <a className="menuLink" href="#contatos">CONTATOS</a>
 
            </div>
