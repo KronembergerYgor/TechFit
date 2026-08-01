@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'
 
+import { FaRegCheckCircle } from "react-icons/fa";
 import '../styles/LoginPage.css'
 import HeaderForms from '../components/header/HeaderForms';
 import LogoCompleta from '../assets/LogoCompleta.png';
 import InputForm from '../components/InputForm';
 import Button from '../components/Button';
 import DivisorForm from '../components/DivisorForm';
+import ModalWarning from '../components/ModalWarning';
 
 import type { Role } from '../types/Role';
 import { apiGet, apiPost } from '../services/api';
@@ -52,6 +54,8 @@ function RegisterPage() {
 
   const [formErrors, setFormErrors] = useState<Record<string, string[]>>({});
   const [submitting, setSubmitting] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
     apiGet<Role[]>('/roles')
@@ -59,6 +63,28 @@ function RegisterPage() {
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    if (!success) return;
+
+    // inicia o fade-out um pouco antes dos 30s acabarem
+    const fadeTimer = setTimeout(() => {
+      setFadeOut(true);
+    }, 5000 - 400); // 400ms = duração da transição
+
+    // remove o alerta do DOM e redireciona após o fade terminar
+    const removeTimer = setTimeout(() => {
+      setSuccess(false);
+      setFadeOut(false);
+      navigate(`/login/${typeParam}`);
+    }, 5000);
+
+    return () => {
+      clearTimeout(fadeTimer);
+      clearTimeout(removeTimer);
+    };
+  }, [success, navigate, typeParam]);
+
 
   const roleAluno = roles.find(role => role.id === Number(typeParam));
 
@@ -73,11 +99,9 @@ function RegisterPage() {
     setFormData(prev => ({ ...prev, [name]: value }));
   }
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormErrors({});
     setSubmitting(true);
-
     try {
       const payload = {
         name: formData.name,
@@ -89,60 +113,71 @@ function RegisterPage() {
       };
 
       await apiPost('/register', payload);
-
-      navigate('/login/' + typeParam);
+      setSuccess(true);
     } catch (err) {
       const apiError = err as ApiErrorResponse;
       setFormErrors(apiError.errors || {});
     } finally {
       setSubmitting(false);
     }
-  }
+  };
 
   if (loading) return <p>Carregando...</p>;
   if (error) return <p>Erro ao carregar: {error}</p>;
   if (!roleAluno) return <p>Role não encontrada.</p>;
+
 
   const textRoleAluno = roleAluno.name.toUpperCase();
 
   return (
     <>
       <HeaderForms
-        classNameTextHeader="header-container header-container-login p-5 mb-4 border-bottom"
+        classNameTextHeader="header-container header-container-login header-container-register mb-4 border-bottom"
         imgLogo={LogoCompleta}
         widthImg={200}
         typePageMenu="Register"
       />
 
+      {success && (
+        <ModalWarning icon={<FaRegCheckCircle style={{ fontSize: "5rem", color: "#db8300" }} />} fadeOut={fadeOut} titleModal={"Cadastro Realizado com sucesso"} subTitle={"Você será redirecionado para página de login em 5 segundos"} />
+      )}
+
       <div data-aos="fade-up" data-aos-delay="200">
-        <TitlePageForm titleForm="CADASTRO DE " typeParam={textRoleAluno} subtitleForm="Crie sua conta para começar" />
 
-        <div className="inputsDivRegister" >
-          <form onSubmit={handleSubmit}>
+        <div className="boxRegister">
 
-            {formErrors.name && <span className="text-danger m-2"> - {formErrors.name[0]}</span>}
-            <InputForm name="name" valueInput={formData.name} onChange={handleChange} requiredValue={true} labelTitle="Nome Completo *" typeInput="text" placeholderInput="Digite seu nome completo" idInput="nameRegister"/>
-            
-            {formErrors.email && <span className="text-danger m-2"> - {formErrors.email[0]}</span>}
-            <InputForm name="email" valueInput={formData.email} onChange={handleChange} requiredValue={true} labelTitle="E-mail *" typeInput="email" placeholderInput="Digite seu E-mail" idInput="emailRegister"/>
+            <TitlePageForm titleForm="CADASTRO DE " typeParam={textRoleAluno} subtitleForm="Crie sua conta para começar" />
 
-            {formErrors.cell_phone && <span className="text-danger m-2"> - {formErrors.cell_phone[0]}</span>}
-            <InputForm minlengthInput={14} maxlengthInput={14} requiredValue={false} valueInput={formData.cell_phone} onChange={handleChange} labelTitle="Celular" typeInput="text" placeholderInput="Digite seu celular. EX: 21900000000" idInput="cell_phone"/>
+            <div className="inputsDivRegister" >
+                <form onSubmit={handleSubmit}>
+                  {formErrors.name && <span className="text-danger m-2"> - {formErrors.name[0]}</span>}
+                  <InputForm name="name" valueInput={formData.name} onChange={handleChange} requiredValue={true} labelTitle="Nome Completo *" typeInput="text" placeholderInput="Digite seu nome completo" idInput="nameRegister"/>
 
-            {formErrors.password && <span className="text-danger m-2"> - {formErrors.password[0]}</span>}
-            <InputForm name="password" valueInput={formData.password} onChange={handleChange} requiredValue={true} labelTitle="Senha *" typeInput="password" placeholderInput="Digite sua senha" idInput="passwordRegister"/>
+                  {formErrors.email && <span className="text-danger m-2"> - {formErrors.email[0]}</span>}
+                  <InputForm name="email" valueInput={formData.email} onChange={handleChange} requiredValue={true} labelTitle="E-mail *" typeInput="email" placeholderInput="Digite seu E-mail" idInput="emailRegister"/>
 
-            <InputForm name="password_confirmation" valueInput={formData.password_confirmation} onChange={handleChange} requiredValue={true} labelTitle="Confirme Senha *" typeInput="password" placeholderInput="Confirme sua senha" idInput="confirmPasswordRegister"/>
+                  {formErrors.cell_phone && <span className="text-danger m-2"> - {formErrors.cell_phone[0]}</span>}
+                  <InputForm minlengthInput={14} maxlengthInput={14} requiredValue={false} valueInput={formData.cell_phone} onChange={handleChange} labelTitle="Celular" typeInput="text" placeholderInput="Digite seu celular. EX: 21900000000" idInput="cell_phone"/>
 
-            <Button typeButton="submit" classNameText="buttonRegisterPage" title={submitting ? 'Cadastrando...' : 'Cadastrar'} />
-          </form>
+                  {formErrors.password && <span className="text-danger m-2"> - {formErrors.password[0]}</span>}
+                  <InputForm name="password" valueInput={formData.password} onChange={handleChange} requiredValue={true} labelTitle="Senha *" typeInput="password" placeholderInput="Digite sua senha" idInput="passwordRegister"/>
 
-          <DivisorForm/>
-          <div className='text-center mb-4'>
-            <span>Já tem conta? <a href={"/login/" + typeParam} >Entre aqui</a></span>
-          </div>
+                  <InputForm name="password_confirmation" valueInput={formData.password_confirmation} onChange={handleChange} requiredValue={true} labelTitle="Confirme Senha *" typeInput="password" placeholderInput="Confirme sua senha" idInput="confirmPasswordRegister"/>
+
+                  <Button typeButton="submit" classNameText="buttonRegisterPage" title={submitting ? 'Cadastrando...' : 'Cadastrar'} />
+                </form>
+
+                <DivisorForm/>
+                <div className='text-center'>
+                  <span>Já tem conta? <a href={"/login/" + typeParam} >Entre aqui</a></span>
+                </div>
+
+              </div>
+
 
         </div>
+
+
 
       </div>
 

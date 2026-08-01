@@ -9,6 +9,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Home from './pages/Home';
+import PrivateRoute from './components/PrivateRoute';
+import Teste from './pages/Teste';
+import Unauthorized from './pages/Unauthorized';
+
 
 
 
@@ -35,11 +39,16 @@ function App() {
 
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login/:typeParam" element={<LoginPage />} />
-        <Route path="/Register/:typeParam" element={<RegisterPage />} />
-      </Routes>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login/:typeParam" element={<LoginPage />} />
+      <Route path="/Register/:typeParam" element={<RegisterPage />} />
+      <Route path="/Unauthorized" element={<Unauthorized />} />
+
+      <Route element={<PrivateRoute />}>
+        <Route path="/teste" element={<Teste />} />
+      </Route>
+    </Routes>
     </>
   )
 }

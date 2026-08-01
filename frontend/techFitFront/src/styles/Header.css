@@ -98,12 +98,14 @@
     justify-content: center;
 }
 
+
+
 /*============ Login Menu ============= */
 .header-container-login{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 0rem;
     gap: 0.5rem;
     flex-wrap: wrap;
     min-width: 0;
@@ -188,6 +190,11 @@
     background-color: #f2f2f2;
 }
 /*============ Login Menu ============= */
+
+.header-container-register{
+    padding: 1rem 4rem;
+    box-shadow: 1px -8px 28px #000;
+}
 
 /* ==========================================================================
    LAYOUT RESPONSIVO (MOBILE)
@@ -277,6 +284,11 @@
     }
 }
 @media (max-width: 1000px) {
+    .header-container-register{
+        padding: 1rem 4rem;
+        box-shadow: none;
+    }
+
     .hamburgerLogin{
         display: block;
     }

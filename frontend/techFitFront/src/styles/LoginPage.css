@@ -18,7 +18,7 @@ body{
 }
 
 .inputsDivRegister{
-    width: 40%;
+    /* width: 40%; */
     margin: 0 auto;
     
 
@@ -28,11 +28,139 @@ body{
     color: rgb(219, 131, 0);
     margin-bottom: 1rem;
 }
-@media (max-width: 768px) {
+
+.alert-success {
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
+}
+
+.alert-fade-out {
+  opacity: 0;
+}
+
+.alert-success {
+  opacity: 0;
+  animation: fadeIn 0.4s ease-in forwards;
+  transition: opacity 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.success-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.success-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 48px 40px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
+}
+
+.success-modal-fade-out {
+  opacity: 0;
+}
+
+.success-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #999;
+  cursor: pointer;
+}
+
+.success-modal-icon {
+  margin: 0 auto 24px;
+  width: 90px;
+  height: 90px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #F26522;
+  stroke-width: 4;
+}
+
+.checkmark {
+  fill: none;
+  stroke: #F26522;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.spark {
+  stroke: #F26522;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.success-modal-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.success-modal-subtitle {
+  font-size: 15px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.boxRegister{
+    border: 1px solid #686868;
+    width: 50%;
+    margin: 2rem auto; 
+    padding: 5rem 7rem; 
+    border-radius: 1rem; 
+    box-shadow: 4px 2px 6px #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1200px) {
 
     .inputsDivRegister{
         width: 100%;
-        padding: 3rem 2rem;
+        /* padding: 3rem 2rem; */
+    }
+
+    .boxRegister{
+        border: 1px solid #a9a9a9;
+        width: 90%;
+        margin: 4rem auto; 
+        padding: 5rem 2rem; 
+        border-radius: 1rem; 
+        box-shadow: 4px 2px 6px #000;
     }
 
 }

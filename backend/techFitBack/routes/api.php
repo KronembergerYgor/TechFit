@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\RolesController;
 use App\Http\Controllers\Api\UserController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,3 +15,10 @@ Route::get('/roles', [RolesController::class, 'index']);
 
 //Api Cadastro
 Route::post('/register', [UserController::class, 'store']);
+
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::middleware(['auth:sanctum', 'active'])->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/me', [AuthController::class, 'me']);
+});
