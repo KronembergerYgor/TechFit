@@ -22,3 +22,8 @@ Route::middleware(['auth:sanctum', 'active'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
 });
+
+Route::post('/ForgotPassword', [AuthController::class, 'forgotPassword']);
+Route::post('/ResetPassword', [AuthController::class, 'resetPassword']);
+
+Route::post('/validate-reset-token', [AuthController::class, 'validateResetToken']);
