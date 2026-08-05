@@ -83,6 +83,11 @@ function FormLogin() {
     };
   }, [showLoginError]);
 
+  
+
+
+
+
   return (
     <form onSubmit={handleSubmit}>
       <div className="inputsDiv">
@@ -119,7 +124,14 @@ function FormLogin() {
           idInput="passwordLogin"
         />
 
-        <a href="#">Esqueceu sua senha?</a>
+        {/* <a href="#">Esqueceu sua senha?</a> */}
+          <button 
+            type="button" 
+            className="forgot-password-link" 
+            onClick={() => navigate('/ForgotPassword')}
+          >
+          Esqueci minha senha
+        </button>
       </div>
 
       <div className="fieldButtonEnter">

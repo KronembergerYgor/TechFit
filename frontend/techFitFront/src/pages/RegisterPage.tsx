@@ -131,12 +131,7 @@ function RegisterPage() {
 
   return (
     <>
-      <HeaderForms
-        classNameTextHeader="header-container header-container-login header-container-register mb-4 border-bottom"
-        imgLogo={LogoCompleta}
-        widthImg={200}
-        typePageMenu="Register"
-      />
+
 
       {success && (
         <ModalWarning icon={<FaRegCheckCircle style={{ fontSize: "5rem", color: "#db8300" }} />} fadeOut={fadeOut} titleModal={"Cadastro Realizado com sucesso"} subTitle={"Você será redirecionado para página de login em 5 segundos"} />
@@ -144,11 +139,19 @@ function RegisterPage() {
 
       <div data-aos="fade-up" data-aos-delay="200">
 
-        <div className="boxRegister">
+        <div style={{padding: "2rem 0"}}>
 
-            <TitlePageForm titleForm="CADASTRO DE " typeParam={textRoleAluno} subtitleForm="Crie sua conta para começar" />
+          <div className="boxRegister">
+              <HeaderForms
+                classNameTextHeader="header-container header-container-login mb-4 border-bottom"
+                imgLogo={LogoCompleta}
+                widthImg={200}
+                typePageMenu="Register"
+              />
 
-            <div className="inputsDivRegister" >
+              <TitlePageForm titleForm="CADASTRO DE " typeParam={textRoleAluno} subtitleForm="Crie sua conta para começar" />
+
+              <div className="inputsDivRegister" >
                 <form onSubmit={handleSubmit}>
                   {formErrors.name && <span className="text-danger m-2"> - {formErrors.name[0]}</span>}
                   <InputForm name="name" valueInput={formData.name} onChange={handleChange} requiredValue={true} labelTitle="Nome Completo *" typeInput="text" placeholderInput="Digite seu nome completo" idInput="nameRegister"/>
@@ -168,16 +171,15 @@ function RegisterPage() {
                 </form>
 
                 <DivisorForm/>
-                <div className='text-center'>
+                <div className='text-center mb-3'>
                   <span>Já tem conta? <a href={"/login/" + typeParam} >Entre aqui</a></span>
                 </div>
 
               </div>
 
+          </div>
 
         </div>
-
-
 
       </div>
 

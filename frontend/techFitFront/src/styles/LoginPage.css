@@ -10,11 +10,30 @@ body{
 }
     
 .buttonRegisterPage{
-    margin-top: 2.5rem;
+    margin-top:1rem;
     width: 100%;
     border-radius: 6px;
     color: #fff;
 
+}
+
+.logoMenuForgotPassword{
+  width: 12rem;
+}
+
+.linkBackMenu{
+  display: inline;
+  text-decoration: none; 
+  font-size: 1.5rem;
+  color: #000; 
+  cursor: pointer;
+}
+
+.headerForgotPassword{
+  padding: 1rem 1rem; 
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
 }
 
 .inputsDivRegister{
@@ -129,22 +148,11 @@ body{
 .boxRegister{
     border: 1px solid #686868;
     width: 50%;
-    margin: 2rem auto; 
-    padding: 5rem 7rem; 
+    margin: 0 auto; 
+    padding: 1rem 2rem; 
     border-radius: 1rem; 
     box-shadow: 4px 2px 6px #000;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media (max-width: 1200px) {
@@ -158,9 +166,28 @@ body{
         border: 1px solid #a9a9a9;
         width: 90%;
         margin: 4rem auto; 
-        padding: 5rem 2rem; 
+        padding: 1rem 2rem; 
         border-radius: 1rem; 
         box-shadow: 4px 2px 6px #000;
     }
+
+
+
+}
+
+
+@media (max-width: 720px) {
+    .linkBackMenu span{
+      display: none;
+    } 
+
+    .linkBackMenu{
+      font-size: 2.5rem;
+    }
+
+    .logoMenuForgotPassword{
+      width: 9rem;
+    }
+
 
 }

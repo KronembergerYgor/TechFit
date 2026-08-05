@@ -12,6 +12,9 @@ import Home from './pages/Home';
 import PrivateRoute from './components/PrivateRoute';
 import Teste from './pages/Teste';
 import Unauthorized from './pages/Unauthorized';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword'; // ajuste o caminho conforme sua estrutura
+
 
 
 
@@ -44,7 +47,9 @@ function App() {
       <Route path="/login/:typeParam" element={<LoginPage />} />
       <Route path="/Register/:typeParam" element={<RegisterPage />} />
       <Route path="/Unauthorized" element={<Unauthorized />} />
+      <Route path="/ForgotPassword" element={<ForgotPassword />} />
 
+      <Route path="/redefinir-senha" element={<ResetPassword />} />
       <Route element={<PrivateRoute />}>
         <Route path="/teste" element={<Teste />} />
       </Route>

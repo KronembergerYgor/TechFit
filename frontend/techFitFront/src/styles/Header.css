@@ -130,11 +130,19 @@
     width: 75%;
     margin: 1.5rem auto;
 }
-.inputsDiv a{
+.inputsDiv .forgot-password-link{
     float: right;
     color: rgb(219, 131, 0);
     margin-bottom: 1rem;
+    background: none;
+    text-decoration: underline;
 }
+
+.forgot-password-link:hover{
+    transform: none;
+}
+
+
 .fieldButtonEnter{
     width: 75%;
     margin: 1.5rem auto;
@@ -188,12 +196,6 @@
 }
 .hamburgerLogin:hover{
     background-color: #f2f2f2;
-}
-/*============ Login Menu ============= */
-
-.header-container-register{
-    padding: 1rem 4rem;
-    box-shadow: 1px -8px 28px #000;
 }
 
 /* ==========================================================================
@@ -259,7 +261,7 @@
         width: 80%;
         margin: 1.25rem auto;
     }
-    .inputsDiv a{
+    .inputsDiv .forgot-password-link{
         font-size: 1rem;
     }
     .container-login-geral{
