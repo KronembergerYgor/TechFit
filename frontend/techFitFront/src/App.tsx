@@ -10,13 +10,10 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Home from './pages/Home';
 import PrivateRoute from './components/PrivateRoute';
-import Teste from './pages/Teste';
+import DashboardInit from './pages/DashboardInit';
 import Unauthorized from './pages/Unauthorized';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword'; // ajuste o caminho conforme sua estrutura
-
-
-
 
 
 function App() {
@@ -51,7 +48,7 @@ function App() {
 
       <Route path="/redefinir-senha" element={<ResetPassword />} />
       <Route element={<PrivateRoute />}>
-        <Route path="/teste" element={<Teste />} />
+        <Route path="/DashboardInit" element={<DashboardInit />} />
       </Route>
     </Routes>
     </>

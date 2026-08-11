@@ -52,7 +52,7 @@ function FormLogin() {
     try {
       const response = await apiPost<LoginResponse>('/login', formData);
       localStorage.setItem('techfit_token', response.token);
-      navigate('/teste');
+      navigate('/DashboardInit');
     } catch (err) {
       const apiError = err as ApiErrorResponse;
       setFormErrors(apiError.errors || {});
